@@ -52,3 +52,8 @@ Route::get('/dummy-logout', function () {
 Route::get('/akun', function () {
     return view('akun');
 });
+Route::get('/promo', function () {
+    return view('promo');
+});
+Route::get('/rewards', function () { return view('rewards'); });
+Route::get('/kokacare', function () { return view('kokacare'); });

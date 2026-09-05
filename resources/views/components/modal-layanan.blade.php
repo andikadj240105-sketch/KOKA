@@ -1,5 +1,5 @@
 <!-- resources/views/components/modal-layanan.blade.php -->
-<div id="serviceModal" class="fixed inset-0 z-50 hidden font-sans">
+<div id="serviceModal" class="fixed inset-0 z-[80] hidden font-sans">
     
     <!-- Latar Belakang Gelap (Backdrop) -->
     <div id="modalBackdrop" class="fixed inset-0 bg-[#0b2046]/40 backdrop-blur-sm transition-opacity duration-300 opacity-0" onclick="closeModal()"></div>
@@ -17,13 +17,15 @@
                         <h3 id="modalTitle" class="font-display text-lg font-bold text-[#0b2046]">Nama Layanan</h3>
                         <p id="modalDesc" class="mt-1 text-sm text-[#64748b]">Deskripsi layanan</p>
                     </div>
-                    <button onclick="closeModal()" class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f8fafc] text-[#0b2046] transition hover:bg-[#e2e8f0]">
+                    <button type="button" onclick="closeModal()" class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f8fafc] text-[#0b2046] transition hover:bg-[#e2e8f0]">
                         <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
                     </button>
                 </div>
 
-                <!-- Form Container (flex-1 dan overflow-hidden agar bisa memisahkan area scroll dan sticky) -->
-                <form action="/pembayaran" method="GET" id="dynamicForm" class="flex flex-col flex-1 overflow-hidden">
+                <!-- Form Container -->
+                <!-- Aksi URL akan diubah secara dinamis oleh JavaScript -->
+                <form action="/pembayaran" method="GET" id="dynamicForm" class="flex flex-col flex-1 overflow-hidden" onsubmit="handleFormSubmit(event)">
+                    <input type="hidden" id="serviceTypeInput" name="service_type" value="">
                     
                     <!-- Area Input yang bisa di-scroll -->
                     <div class="flex-1 overflow-y-auto p-6">
@@ -46,10 +48,14 @@
 </div>
 
 <script>
+    // Menyimpan konfigurasi layanan yang sedang dibuka
+    let currentServiceConfig = null;
+    let currentServiceName = "";
+
     const serviceConfigs = {
         // --- 7 LAYANAN TRANSAKSIONAL ---
         'KosanJek': {
-            price: 25000, desc: "Antar-jemput & pengantaran cepat",
+            price: 25000, desc: "Antar-jemput & pengantaran cepat", actionUrl: "/pembayaran",
             fields: [
                 { name: "nama", label: "Nama Lengkap", required: true, half: true },
                 { name: "hp", label: "Nomor HP", type: "tel", required: true, half: true },
@@ -62,7 +68,7 @@
             ]
         },
         'KosanMove': {
-            price: 150000, desc: "Pindahan mudah & aman",
+            price: 150000, desc: "Pindahan mudah & aman", actionUrl: "/pembayaran",
             fields: [
                 { name: "nama", label: "Nama Lengkap", required: true, half: true },
                 { name: "hp", label: "Nomor HP", type: "tel", required: true, half: true },
@@ -76,7 +82,7 @@
             ]
         },
         'KosanClean': {
-            price: 50000, desc: "Kebersihan kamar terjaga",
+            price: 50000, desc: "Kebersihan kamar terjaga", actionUrl: "/pembayaran",
             fields: [
                 { name: "nama", label: "Nama Lengkap", required: true, half: true },
                 { name: "hp", label: "Nomor HP", type: "tel", required: true, half: true },
@@ -90,7 +96,7 @@
             ]
         },
         'KosanFix': {
-            price: 40000, desc: "Perawatan & perbaikan",
+            price: 40000, desc: "Perawatan & perbaikan", actionUrl: "/pembayaran",
             fields: [
                 { name: "nama", label: "Nama Lengkap", required: true, half: true },
                 { name: "hp", label: "Nomor HP", type: "tel", required: true, half: true },
@@ -103,7 +109,7 @@
             ]
         },
         'KosanLaundry': {
-            price: 20000, desc: "Laundry praktis antar-jemput",
+            price: 20000, desc: "Laundry praktis antar-jemput", actionUrl: "/pembayaran",
             fields: [
                 { name: "nama", label: "Nama Lengkap", required: true, half: true },
                 { name: "hp", label: "Nomor HP", type: "tel", required: true, half: true },
@@ -116,7 +122,7 @@
             ]
         },
         'KosanMart': {
-            price: 15000, desc: "Belanja kebutuhan harian",
+            price: 15000, desc: "Belanja kebutuhan harian", actionUrl: "/pembayaran",
             fields: [
                 { name: "nama", label: "Nama Lengkap", required: true, half: true },
                 { name: "hp", label: "Nomor HP", type: "tel", required: true, half: true },
@@ -127,7 +133,7 @@
             ]
         },
         'KosanStorage': {
-            price: 75000, desc: "Titip barang aman",
+            price: 75000, desc: "Titip barang aman", actionUrl: "/pembayaran",
             fields: [
                 { name: "nama", label: "Nama Lengkap", required: true, half: true },
                 { name: "hp", label: "Nomor HP", type: "tel", required: true, half: true },
@@ -140,11 +146,13 @@
             ]
         },
 
-        // --- 3 LAYANAN DUKUNGAN (TIDAK BERBAYAR) ---
+        // --- 3 LAYANAN DUKUNGAN (TIDAK BERBAYAR & TIDAK KE HALAMAN PEMBAYARAN) ---
         'Lapor Masalah': {
             price: 0, 
             desc: "Laporkan kendala di kos atau aplikasi",
             btnText: "Kirim Laporan",
+            actionUrl: "non_transactional", // Menandakan bahwa ini tidak perlu ke halaman bayar
+            successMessage: "Laporan berhasil dikirim! Tim kami akan segera memprosesnya.",
             fields: [
                 { name: "nama", label: "Nama Lengkap", required: true, half: true },
                 { name: "hp", label: "Nomor HP", type: "tel", required: true, half: true },
@@ -157,6 +165,8 @@
             price: 0, 
             desc: "Cek dan klaim point keuntunganmu",
             btnText: "Cek Poin Sekarang",
+            actionUrl: "non_transactional",
+            successMessage: "Data poin sedang diproses. Silakan cek notifikasi Anda.",
             fields: [
                 { name: "hp", label: "Nomor HP Terdaftar", type: "tel", required: true }
             ]
@@ -164,7 +174,9 @@
         'KOKA Care': {
             price: 0, 
             desc: "Bantuan CS KOKA 24/7 untukmu",
-            btnText: "Mulai Chat CS",
+            btnText: "Kirim Pesan ke CS",
+            actionUrl: "non_transactional",
+            successMessage: "Pesan terkirim! CS kami akan segera menghubungi Anda.",
             fields: [
                 { name: "nama", label: "Nama Lengkap", required: true, half: true },
                 { name: "hp", label: "Nomor HP", type: "tel", required: true, half: true },
@@ -179,20 +191,31 @@
     const panel = document.getElementById('modalPanel');
 
     function openModal(serviceName) {
-        const config = serviceConfigs[serviceName];
-        if (!config) return;
-
-        // 1. Set Isi Teks
-        document.getElementById('modalTitle').innerText = serviceName;
-        document.getElementById('modalDesc').innerText = config.desc;
+        currentServiceConfig = serviceConfigs[serviceName];
+        currentServiceName = serviceName;
         
-        // Logika Tombol Cerdas: Tampilkan harga HANYA jika harganya di atas 0
+        if (!currentServiceConfig) return;
+
+        // 1. Set Isi Teks & Action URL
+        document.getElementById('modalTitle').innerText = serviceName;
+        document.getElementById('modalDesc').innerText = currentServiceConfig.desc;
+        document.getElementById('serviceTypeInput').value = serviceName;
+        
+        const form = document.getElementById('dynamicForm');
+        // Jika form adalah transaksional, arahkan ke URL pembayaran. Jika tidak, hapus action-nya.
+        if (currentServiceConfig.actionUrl !== "non_transactional") {
+            form.action = currentServiceConfig.actionUrl;
+        } else {
+            form.removeAttribute('action');
+        }
+        
+        // Logika Tombol Cerdas
         const btn = document.getElementById('submitBtn');
-        if (config.price > 0) {
-            const formattedPrice = new Intl.NumberFormat('id-ID').format(config.price);
+        if (currentServiceConfig.price > 0) {
+            const formattedPrice = new Intl.NumberFormat('id-ID').format(currentServiceConfig.price);
             btn.innerText = `Pesan Sekarang · Rp ${formattedPrice}`;
         } else {
-            btn.innerText = config.btnText || 'Kirim';
+            btn.innerText = currentServiceConfig.btnText || 'Kirim';
         }
 
         // 2. Render Form Fields
@@ -200,7 +223,7 @@
         let htmlContent = '';
         const inputBaseClass = "w-full rounded-xl border border-[#e2e8f0] bg-white px-4 py-3 text-sm text-[#1e293b] outline-none transition placeholder:text-[#64748b] focus:border-[#0b2046] focus:ring-4 focus:ring-[#0b2046]/10";
 
-        config.fields.forEach(field => {
+        currentServiceConfig.fields.forEach(field => {
             const colSpan = field.half ? 'sm:col-span-1' : 'sm:col-span-2';
             const isRequired = field.required ? '<span class="text-[#E5B044]">*</span>' : '';
             const requiredAttr = field.required ? 'required' : '';
@@ -243,5 +266,25 @@
         panel.classList.remove('opacity-100', 'translate-y-0', 'sm:scale-100');
         panel.classList.add('opacity-0', 'translate-y-full', 'sm:scale-95');
         setTimeout(() => { modal.classList.add('hidden'); }, 300);
+    }
+
+    // 4. Logika Handle Submit Khusus Layanan Dukungan
+    function handleFormSubmit(event) {
+        // Jika layanan yang sedang dibuka adalah tipe non-transaksional (Lapor Masalah dll)
+        if (currentServiceConfig && currentServiceConfig.actionUrl === "non_transactional") {
+            // Cegah form berpindah halaman!
+            event.preventDefault();
+            
+            // Tutup modal
+            closeModal();
+            
+            // Tampilkan Notifikasi Toast (Memastikan fungsi showToast dari layout utama dipanggil)
+            if (typeof showToast === "function") {
+                showToast(currentServiceConfig.successMessage);
+            } else {
+                alert(currentServiceConfig.successMessage); // Fallback jika fungsi toast gagal
+            }
+        }
+        // Jika transaksional, biarkan event submit normal berjalan (berpindah ke halaman /pembayaran)
     }
 </script>

@@ -26,7 +26,7 @@
           <!-- Badge -->
           <span class="inline-flex items-center gap-2 rounded-full bg-[#f8fafc] px-3.5 py-1.5 text-xs font-semibold text-[#0b2046]">
             <span class="h-1.5 w-1.5 rounded-full bg-[#E5B044]"></span>
-            #1 Student Living Platform di Indonesia
+            1 Student Living Platform di Indonesia
           </span>
           
           <!-- JUDUL & LOGO -->
@@ -111,46 +111,70 @@
 
     <!-- ================= QUICK ACTIONS ================= -->
     <section class="mx-auto max-w-[1280px] px-4 sm:px-6">
-      <div class="rounded-[28px] bg-navy p-5 sm:p-8">
-        <div class="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
-          <button class="group flex items-center gap-3.5 rounded-2xl p-3 text-left transition hover:bg-white/5 sm:p-4">
-            <div class="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white transition group-hover:bg-gold sm:h-14 sm:w-14">
-              <svg class="h-5 w-5 text-navy sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
-            </div>
-            <div>
-              <div class="font-display text-sm font-semibold text-white sm:text-base">Cari Kos</div>
-              <div class="text-[11px] leading-snug text-white/60 sm:text-xs">Temukan kos terbaik untukmu</div>
-            </div>
-          </button>
-          <button class="group flex items-center gap-3.5 rounded-2xl p-3 text-left transition hover:bg-white/5 sm:p-4">
-            <div class="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white transition group-hover:bg-gold sm:h-14 sm:w-14">
-              <svg class="h-5 w-5 text-navy sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
-            </div>
-            <div>
-              <div class="font-display text-sm font-semibold text-white sm:text-base">Bayar Kos</div>
-              <div class="text-[11px] leading-snug text-white/60 sm:text-xs">Bayar tagihan lebih mudah</div>
-            </div>
-          </button>
-          <button class="group flex items-center gap-3.5 rounded-2xl p-3 text-left transition hover:bg-white/5 sm:p-4">
-            <div class="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white transition group-hover:bg-gold sm:h-14 sm:w-14">
-              <svg class="h-5 w-5 text-navy sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-            </div>
-            <div>
-              <div class="font-display text-sm font-semibold text-white sm:text-base">Kontrak Saya</div>
-              <div class="text-[11px] leading-snug text-white/60 sm:text-xs">Lihat kontrak dan dokumenmu</div>
-            </div>
-          </button>
-          <button class="group flex items-center gap-3.5 rounded-2xl p-3 text-left transition hover:bg-white/5 sm:p-4">
-            <div class="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white transition group-hover:bg-gold sm:h-14 sm:w-14">
-              <svg class="h-5 w-5 text-navy sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" /></svg>
-            </div>
-            <div>
-              <div class="font-display text-sm font-semibold text-white sm:text-base">Promo</div>
-              <div class="text-[11px] leading-snug text-white/60 sm:text-xs">Dapatkan promo menarik</div>
-            </div>
-          </button>
-        </div>
+      <!-- BANNER KEUNGGULAN KOKA (4 KOLOM - PREMIUM ICONS) -->
+<div class="rounded-[24px] bg-[#0b2046] p-6 sm:px-8 sm:py-7">
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-white/10">
+    
+    <!-- Keunggulan 1: Terverifikasi -->
+    <div class="group flex items-center gap-4 lg:px-6 lg:first:pl-0 transition-transform duration-300 hover:-translate-y-1">
+      <div class="relative grid h-12 w-12 shrink-0 place-items-center rounded-[14px] bg-white shadow-sm overflow-hidden">
+        <!-- Aksen Emas Estetik -->
+        <div class="absolute -right-2 -top-2 h-7 w-7 rounded-full bg-[#E5B044]/25 transition-transform duration-500 group-hover:scale-150"></div>
+        <svg class="relative z-10 h-[22px] w-[22px] text-[#0b2046]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+        </svg>
       </div>
+      <div>
+        <h4 class="font-display text-[15px] font-bold text-white">Kos Terverifikasi</h4>
+        <p class="mt-0.5 text-[12px] leading-snug text-white/70">Pasti aman & sesuai dengan foto</p>
+      </div>
+    </div>
+
+    <!-- Keunggulan 2: Transaksi Aman -->
+    <div class="group flex items-center gap-4 lg:px-6 transition-transform duration-300 hover:-translate-y-1">
+      <div class="relative grid h-12 w-12 shrink-0 place-items-center rounded-[14px] bg-white shadow-sm overflow-hidden">
+        <div class="absolute -right-2 -top-2 h-7 w-7 rounded-full bg-[#E5B044]/25 transition-transform duration-500 group-hover:scale-150"></div>
+        <svg class="relative z-10 h-[22px] w-[22px] text-[#0b2046]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 00-2.25-2.25H15a3 3 0 11-6 0H4.5A2.25 2.25 0 002.25 12v6.75A2.25 2.25 0 004.5 21h15a2.25 2.25 0 002.25-2.25V12z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5h15M4.5 10.5A2.25 2.25 0 016.75 8.25h10.5A2.25 2.25 0 0119.5 10.5M4.5 10.5v-6A2.25 2.25 0 016.75 2.25h10.5A2.25 2.25 0 0119.5 4.5v6M9 14.25h.008v.008H9v-.008z" />
+        </svg>
+      </div>
+      <div>
+        <h4 class="font-display text-[15px] font-bold text-white">Transaksi Aman</h4>
+        <p class="mt-0.5 text-[12px] leading-snug text-white/70">Pembayaran resmi anti penipuan</p>
+      </div>
+    </div>
+
+    <!-- Keunggulan 3: Fasilitas Lengkap -->
+    <div class="group flex items-center gap-4 lg:px-6 transition-transform duration-300 hover:-translate-y-1">
+      <div class="relative grid h-12 w-12 shrink-0 place-items-center rounded-[14px] bg-white shadow-sm overflow-hidden">
+        <div class="absolute -right-2 -top-2 h-7 w-7 rounded-full bg-[#E5B044]/25 transition-transform duration-500 group-hover:scale-150"></div>
+        <svg class="relative z-10 h-[22px] w-[22px] text-[#0b2046]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819" />
+        </svg>
+      </div>
+      <div>
+        <h4 class="font-display text-[15px] font-bold text-white">Fasilitas Lengkap</h4>
+        <p class="mt-0.5 text-[12px] leading-snug text-white/70">Kamar nyaman, tinggal bawa koper</p>
+      </div>
+    </div>
+
+    <!-- Keunggulan 4: Dukungan 24/7 -->
+    <div class="group flex items-center gap-4 lg:px-6 lg:last:pr-0 transition-transform duration-300 hover:-translate-y-1">
+      <div class="relative grid h-12 w-12 shrink-0 place-items-center rounded-[14px] bg-white shadow-sm overflow-hidden">
+        <div class="absolute -right-2 -top-2 h-7 w-7 rounded-full bg-[#E5B044]/25 transition-transform duration-500 group-hover:scale-150"></div>
+        <svg class="relative z-10 h-[22px] w-[22px] text-[#0b2046]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+        </svg>
+      </div>
+      <div>
+        <h4 class="font-display text-[15px] font-bold text-white">Dukungan 24/7</h4>
+        <p class="mt-0.5 text-[12px] leading-snug text-white/70">Bantuan CS & layanan perbaikan kos</p>
+      </div>
+    </div>
+
+  </div>
+</div>
     </section>
 
     <!-- ================= LAYANAN KOKA LENGKAP ================= -->
@@ -279,58 +303,9 @@
       </div>
     </section>
 
-    <!-- ================= PROMO BANNER ================= -->
     
-      <section id="promo" class="mx-auto max-w-[1280px] scroll-mt-20 px-4 sm:px-6 my-16">
-        <div class="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-[#0b2046] to-[#071630]">
-          <div class="grid gap-8 p-7 sm:p-10 lg:grid-cols-2 lg:items-center lg:p-12">
-            
-            <!-- Konten Teks Kiri -->
-            <div>
-              <span id="slideTag" class="inline-flex rounded-full bg-[#E5B044]/20 px-3 py-1 text-xs font-semibold text-[#E5B044] transition-opacity duration-300">
-                Promo Spesial
-              </span>
-              <h2 id="slideTitle" class="mt-4 font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl transition-opacity duration-300">
-                Hunian Nyaman,<br>Hidup Lebih Berkualitas
-              </h2>
-              <p id="slideDesc" class="mt-4 max-w-md text-sm leading-relaxed text-white/70 transition-opacity duration-300">
-                Temukan kos terbaik dan layanan pendukung dari KOKA untuk pengalaman ngekos terbaik.
-              </p>
-              
-              <!-- Tombol -->
-              <a href="/cari-kos" id="slideLink" class="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#E5B044] px-6 py-3.5 text-sm font-bold text-[#0b2046] transition hover:opacity-90">
-                <span id="slideBtnText">Cari Kos Sekarang</span>
-                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-              </a>
-              
-              <!-- Indikator Dots -->
-              <div class="mt-7 flex gap-2" id="sliderIndicators">
-                <button onclick="changeSlide(0)" class="h-1.5 w-8 rounded-full bg-[#E5B044] transition-all duration-300"></button>
-                <button onclick="changeSlide(1)" class="h-1.5 w-2.5 rounded-full bg-white/30 transition-all duration-300 hover:bg-white/50"></button>
-                <button onclick="changeSlide(2)" class="h-1.5 w-2.5 rounded-full bg-white/30 transition-all duration-300 hover:bg-white/50"></button>
-              </div>
-            </div>
 
-            <!-- Konten Gambar Kanan -->
-            <div class="relative">
-              <img id="slideImg" src="https://images.unsplash.com/photo-1774428559037-545b37f3cf9e?w=800&h=600&fit=crop&auto=format" alt="Promo KOKA" class="aspect-[4/3] w-full rounded-3xl object-cover transition-opacity duration-300" />
-              
-              <!-- Lencana (Badge) Bulat -->
-              <div class="absolute -bottom-4 -left-2 grid h-28 w-28 place-items-center rounded-full bg-[#E5B044] text-center text-[#0b2046] shadow-xl sm:-left-5 sm:h-32 sm:w-32 transition-opacity duration-300">
-                <div>
-                  <div id="slideBadgeVal" class="font-display text-2xl font-extrabold leading-none">1000+</div>
-                  <div id="slideBadgeText" class="mt-1 text-[10px] font-semibold leading-tight">
-                    Pilihan Kos<br>Tersebar di Banyak Kota
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-    <!-- ================= REKOMENDASI KOS ================= -->
+    
     <!-- ================= REKOMENDASI KOS ================= -->
     <section class="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 lg:py-20 font-sans">
       
@@ -502,6 +477,57 @@
           </a>
         </div>
     </section>
+
+    <!-- ================= PROMO BANNER ================= -->
+    
+      <section id="promo" class="mx-auto max-w-[1280px] scroll-mt-20 px-4 sm:px-6 my-16">
+        <div class="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-[#0b2046] to-[#071630]">
+          <div class="grid gap-8 p-7 sm:p-10 lg:grid-cols-2 lg:items-center lg:p-12">
+            
+            <!-- Konten Teks Kiri -->
+            <div>
+              <span id="slideTag" class="inline-flex rounded-full bg-[#E5B044]/20 px-3 py-1 text-xs font-semibold text-[#E5B044] transition-opacity duration-300">
+                Promo Spesial
+              </span>
+              <h2 id="slideTitle" class="mt-4 font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl transition-opacity duration-300">
+                Hunian Nyaman,<br>Hidup Lebih Berkualitas
+              </h2>
+              <p id="slideDesc" class="mt-4 max-w-md text-sm leading-relaxed text-white/70 transition-opacity duration-300">
+                Temukan kos terbaik dan layanan pendukung dari KOKA untuk pengalaman ngekos terbaik.
+              </p>
+              
+              <!-- Tombol -->
+              <a href="/cari-kos" id="slideLink" class="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#E5B044] px-6 py-3.5 text-sm font-bold text-[#0b2046] transition hover:opacity-90">
+                <span id="slideBtnText">Cari Kos Sekarang</span>
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </a>
+              
+              <!-- Indikator Dots -->
+              <div class="mt-7 flex gap-2" id="sliderIndicators">
+                <button onclick="changeSlide(0)" class="h-1.5 w-8 rounded-full bg-[#E5B044] transition-all duration-300"></button>
+                <button onclick="changeSlide(1)" class="h-1.5 w-2.5 rounded-full bg-white/30 transition-all duration-300 hover:bg-white/50"></button>
+                <button onclick="changeSlide(2)" class="h-1.5 w-2.5 rounded-full bg-white/30 transition-all duration-300 hover:bg-white/50"></button>
+              </div>
+            </div>
+
+            <!-- Konten Gambar Kanan -->
+            <div class="relative">
+              <img id="slideImg" src="https://images.unsplash.com/photo-1774428559037-545b37f3cf9e?w=800&h=600&fit=crop&auto=format" alt="Promo KOKA" class="aspect-[4/3] w-full rounded-3xl object-cover transition-opacity duration-300" />
+              
+              <!-- Lencana (Badge) Bulat -->
+              <div class="absolute -bottom-4 -left-2 grid h-28 w-28 place-items-center rounded-full bg-[#E5B044] text-center text-[#0b2046] shadow-xl sm:-left-5 sm:h-32 sm:w-32 transition-opacity duration-300">
+                <div>
+                  <div id="slideBadgeVal" class="font-display text-2xl font-extrabold leading-none">1000+</div>
+                  <div id="slideBadgeText" class="mt-1 text-[10px] font-semibold leading-tight">
+                    Pilihan Kos<br>Tersebar di Banyak Kota
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
 
     <!-- ================= TRUST / BENEFITS ================= -->
     <section id="tentang" class="scroll-mt-20 bg-cloud">

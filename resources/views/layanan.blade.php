@@ -112,7 +112,7 @@
         </button>
 
         <!-- 8. Lapor Masalah -->
-        <button onclick="openModal('LaporMasalah')" class="group flex flex-col items-start gap-3 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E5B044]/40 hover:shadow-md sm:p-5">
+        <button onclick="openModal('Lapor Masalah')" class="group flex flex-col items-start gap-3 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E5B044]/40 hover:shadow-md sm:p-5">
           <div class="grid h-12 w-12 place-items-center rounded-xl bg-[#f8fafc] text-[#0b2046] transition group-hover:bg-[#0b2046] group-hover:text-[#E5B044]">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path stroke-linecap="round" stroke-linejoin="round" d="M4 22v-7"/></svg>
           </div>
@@ -122,8 +122,8 @@
           </div>
         </button>
 
-        <!-- 9. KOKA Rewards -->
-        <button onclick="openModal('KOKARewards')" class="group flex flex-col items-start gap-3 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E5B044]/40 hover:shadow-md sm:p-5">
+       <!-- 9. KOKA Rewards -->
+        <a href="/rewards" class="group w-full flex flex-col items-start gap-3 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E5B044]/40 hover:shadow-md sm:p-5 cursor-pointer">
           <div class="grid h-12 w-12 place-items-center rounded-xl bg-[#f8fafc] text-[#0b2046] transition group-hover:bg-[#0b2046] group-hover:text-[#E5B044]">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><rect x="3" y="8" width="18" height="4" rx="1"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13"/><path stroke-linecap="round" stroke-linejoin="round" d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>
           </div>
@@ -131,10 +131,10 @@
             <div class="font-display text-[14px] font-semibold text-[#0b2046]">KOKA Rewards</div>
             <div class="mt-0.5 text-[11px] leading-snug text-[#64748b]">Point & Keuntungan</div>
           </div>
-        </button>
+        </a>
 
         <!-- 10. KOKA Care -->
-        <button onclick="openModal('KOKACare')" class="group flex flex-col items-start gap-3 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E5B044]/40 hover:shadow-md sm:p-5">
+        <a href="/kokacare" class="group w-full flex flex-col items-start gap-3 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E5B044]/40 hover:shadow-md sm:p-5 cursor-pointer">
           <div class="grid h-12 w-12 place-items-center rounded-xl bg-[#f8fafc] text-[#0b2046] transition group-hover:bg-[#0b2046] group-hover:text-[#E5B044]">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg>
           </div>
@@ -142,7 +142,7 @@
             <div class="font-display text-[14px] font-semibold text-[#0b2046]">KOKA Care</div>
             <div class="mt-0.5 text-[11px] leading-snug text-[#64748b]">Bantuan 24/7 untukmu</div>
           </div>
-        </button>
+        </a>
 
     </div>
   </main>
