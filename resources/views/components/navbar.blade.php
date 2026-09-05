@@ -368,25 +368,33 @@
         }
     }
 
-// === LOGIKA LAYAR LOADING SMOOTH (LEBIH LAMBAT & ELEGAN) ===
+// === LOGIKA LAYAR LOADING SMOOTH (FINAL & PALING MULUS) ===
 document.addEventListener("DOMContentLoaded", () => {
     const loader = document.getElementById('pageLoader');
-    
-    // 1. EFEK HILANG LEBIH LAMBAT SAAT HALAMAN SELESAI DIMUAT
-    window.addEventListener('load', () => {
-        if (loader) {
+    if (!loader) return;
+
+    // 1. FUNGSI KHUSUS MENGHILANGKAN LOADING SECARA MULUS
+    function hideLoader() {
+        // Beri jeda 50ms agar CSS sempat "bernapas" dan merender transisinya
+        setTimeout(() => {
             loader.classList.remove('opacity-100', 'scale-100');
             loader.classList.add('opacity-0', 'scale-110', 'pointer-events-none');
             
-            // Waktu untuk menghapus elemen diubah jadi 1000ms (1 detik) 
-            // agar sesuai dengan duration-1000 di HTML
+            // Sembunyikan elemen setelah animasi 1 detik selesai
             setTimeout(() => {
                 loader.classList.add('hidden');
             }, 1000); 
-        }
-    });
+        }, 50);
+    }
 
-    // 2. MUNCULKAN LEBIH LAMA SAAT KLIK MENU
+    // Cek apakah halaman sudah selesai dimuat
+    if (document.readyState === 'complete') {
+        hideLoader();
+    } else {
+        window.addEventListener('load', hideLoader);
+    }
+
+    // 2. MUNCULKAN SAAT KLIK MENU (Tahan halaman agar animasi muncul)
     document.addEventListener('click', (e) => {
         const target = e.target.closest('a');
         
@@ -399,16 +407,15 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!isAnchor && !isNewTab && !isJavascript && isInternal) {
                 e.preventDefault(); 
                 
-                if (loader) {
-                    loader.classList.remove('hidden', 'pointer-events-none');
-                    requestAnimationFrame(() => {
-                        loader.classList.remove('opacity-0', 'scale-110');
-                        loader.classList.add('opacity-100', 'scale-100');
-                    });
-                }
+                loader.classList.remove('hidden', 'pointer-events-none');
+                
+                // Paksa browser merender perubahan sebelum menambah class baru
+                requestAnimationFrame(() => {
+                    loader.classList.remove('opacity-0', 'scale-110');
+                    loader.classList.add('opacity-100', 'scale-100');
+                });
 
-                // Tunda perpindahan halaman jadi 800 milidetik (sebelumnya 400)
-                // Ini memberi waktu layar putih menutup sempurna sebelum halamannya dibunuh browser
+                // Tunggu 800ms sebelum browser benar-benar pindah halaman
                 setTimeout(() => {
                     window.location.href = target.href;
                 }, 800);
@@ -418,34 +425,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 3. MUNCULKAN SAAT SUBMIT FORMULIR
     document.addEventListener('submit', (e) => {
-        if (loader) {
-            loader.classList.remove('hidden', 'pointer-events-none');
-            requestAnimationFrame(() => {
-                loader.classList.remove('opacity-0', 'scale-110');
-                loader.classList.add('opacity-100', 'scale-100');
-            });
-        }
-    });
-
-    // 4. MUNCULKAN SAAT TOMBOL BACK/FORWARD BROWSER DIKLIK ATAU DI-REFRESH
-    window.addEventListener('beforeunload', () => {
-        if (loader) {
-            loader.classList.remove('hidden', 'pointer-events-none');
+        loader.classList.remove('hidden', 'pointer-events-none');
+        requestAnimationFrame(() => {
             loader.classList.remove('opacity-0', 'scale-110');
             loader.classList.add('opacity-100', 'scale-100');
-        }
+        });
     });
 
-    // 5. ATASI MASALAH CACHE BROWSER (BFCache)
-    // Terkadang saat tombol Back diklik, browser memuat halaman dari memori (cache) 
-    // dalam keadaan loading masih menyala. Ini akan menyembunyikannya kembali.
+    // 4. MUNCULKAN SAAT TOMBOL BACK/FORWARD BROWSER DIKLIK
+    window.addEventListener('beforeunload', () => {
+        loader.classList.remove('hidden', 'pointer-events-none');
+        loader.classList.remove('opacity-0', 'scale-110');
+        loader.classList.add('opacity-100', 'scale-100');
+    });
+
+    // 5. ATASI MASALAH CACHE BROWSER (BFCache saat pakai tombol Back)
     window.addEventListener('pageshow', (event) => {
-        if (event.persisted && loader) {
-            loader.classList.remove('opacity-100', 'scale-100');
-            loader.classList.add('opacity-0', 'scale-110', 'pointer-events-none');
-            setTimeout(() => {
-                loader.classList.add('hidden');
-            }, 1000);
+        if (event.persisted) {
+            hideLoader(); // Jalankan ulang animasi memudar
         }
     });
 });

@@ -134,7 +134,7 @@
             <div class="relative h-[200px] w-full overflow-hidden bg-gray-100">
                 <img src="https://images.unsplash.com/photo-1522771731570-8682deb54f5c?w=400&h=300&fit=crop&auto=format" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                 <span class="absolute left-3 top-3 z-10 rounded-full bg-[#0b2046] px-3 py-1.5 text-[11px] font-semibold text-white">Kosan Kampus</span>
-                <button onclick="event.preventDefault(); this.classList.toggle('text-red-500'); this.classList.toggle('text-gray-400')" class="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-400 shadow-sm transition hover:scale-110">
+                <button onclick="event.preventDefault(); event.stopPropagation(); this.classList.toggle('text-red-500'); this.classList.toggle('text-gray-400')" class="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-400 shadow-sm transition hover:scale-110">
                   <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
                 </button>
             </div>
@@ -164,7 +164,7 @@
             <div class="relative h-[200px] w-full overflow-hidden bg-gray-100">
                 <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop&auto=format" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                 <span class="absolute left-3 top-3 z-10 rounded-full bg-[#0b2046] px-3 py-1.5 text-[11px] font-semibold text-white">Kosan Kampus</span>
-                <button onclick="event.preventDefault(); this.classList.toggle('text-red-500'); this.classList.toggle('text-gray-400')" class="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-400 shadow-sm transition hover:scale-110">
+                <button onclick="event.preventDefault(); event.stopPropagation(); this.classList.toggle('text-red-500'); this.classList.toggle('text-gray-400')" class="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-400 shadow-sm transition hover:scale-110">
                   <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
                 </button>
             </div>
@@ -194,7 +194,7 @@
             <div class="relative h-[200px] w-full overflow-hidden bg-gray-100">
                 <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=400&h=300&fit=crop&auto=format" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                 <span class="absolute left-3 top-3 z-10 rounded-full bg-[#0b2046] px-3 py-1.5 text-[11px] font-semibold text-white">Eksklusif</span>
-                <button onclick="event.preventDefault(); this.classList.toggle('text-red-500'); this.classList.toggle('text-gray-400')" class="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-400 shadow-sm transition hover:scale-110">
+                <button onclick="event.preventDefault(); event.stopPropagation(); this.classList.toggle('text-red-500'); this.classList.toggle('text-gray-400')" class="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-400 shadow-sm transition hover:scale-110">
                   <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
                 </button>
             </div>
@@ -224,7 +224,7 @@
             <div class="relative h-[200px] w-full overflow-hidden bg-gray-100">
                 <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=400&h=300&fit=crop&auto=format" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                 <span class="absolute left-3 top-3 z-10 rounded-full bg-[#0b2046] px-3 py-1.5 text-[11px] font-semibold text-white">Kosan Kampus</span>
-                <button onclick="event.preventDefault(); this.classList.toggle('text-red-500'); this.classList.toggle('text-gray-400')" class="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-400 shadow-sm transition hover:scale-110">
+                <button onclick="event.preventDefault(); event.stopPropagation(); this.classList.toggle('text-red-500'); this.classList.toggle('text-gray-400')" class="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-400 shadow-sm transition hover:scale-110">
                   <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
                 </button>
             </div>
