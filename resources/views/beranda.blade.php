@@ -17,167 +17,140 @@
   <x-navbar />
 
   <main class="bg-white">
-   <!-- ================= HERO SECTION ================= -->
-    <section class="relative overflow-hidden">
-      <div class="mx-auto grid max-w-[1280px] items-center gap-10 px-4 pb-10 pt-10 sm:px-6 lg:grid-cols-2 lg:pb-20 lg:pt-16">
-        
-        <div class="animate-in-up">
-          
-          <!-- Badge -->
-          <span class="inline-flex items-center gap-2 rounded-full bg-[#f8fafc] px-3.5 py-1.5 text-xs font-semibold text-[#0b2046]">
-            <span class="h-1.5 w-1.5 rounded-full bg-[#E5B044]"></span>
-            1 Student Living Platform di Indonesia
-          </span>
-          
-          <!-- JUDUL & LOGO -->
-<div class="mt-4 flex flex-col font-display font-extrabold tracking-tight text-[#0b2046]">
-  
-  <!-- Baris Pertama -->
-  <h1 class="text-[48px] lg:text-[54px] leading-none relative z-20">
-      Selamat Datang
-  </h1>
-  
-  <!-- Baris Kedua -->
-  <div class="relative mt-4 lg:mt-5 flex items-center h-[54px] lg:h-[60px] z-10">
-      <span class="text-[48px] lg:text-[54px] leading-none">di</span>
+   <!-- ================= 1. HERO SECTION (CINEMATIC FULLSCREEN) ================= -->
+    <section class="relative flex min-h-[100svh] items-center justify-center overflow-hidden py-20 lg:py-32">
       
-      <!-- 
-        GAMBAR MELAYANG
-        - Angka left diturunkan menjadi left-[50px] (layar kecil) dan lg:left-[60px] (layar besar)
-      -->
-      <img src="/kosankampus.png" alt="Kosan Kampus" 
-           class="absolute left-[50px] lg:left-[60px] top-1/2 -translate-y-1/2 h-[200px] lg:h-[250px] w-auto mix-blend-multiply object-contain pointer-events-none" />
-  </div>
-</div>
-          
-          <!-- Teks Paragraf (Dibuat mt-4 agar lebih merapat ke logo) -->
-          <p class="mt-4 max-w-md text-base leading-relaxed text-[#64748b] sm:text-lg">
-            Solusi lengkap untuk temukan kosan nyaman dan hidup lebih mudah.
-          </p>
-          
-          <!-- Tombol Aksi (Dibuat mt-5 agar lebih merapat) -->
-          <div class="mt-5 flex flex-wrap gap-3">
-            <a href="/cari-kos" class="inline-flex items-center justify-center rounded-full bg-[#0b2046] px-6 py-3.5 text-sm font-bold text-white transition hover:opacity-90 shadow-sm">
-              Cari Kos Sekarang
-            </a>
-            <a href="/layanan" class="inline-flex items-center justify-center rounded-full border border-[#e2e8f0] bg-white px-6 py-3.5 text-sm font-bold text-[#0b2046] transition hover:bg-[#f8fafc] hover:border-[#0b2046]">
-              Lihat Layanan
-            </a>
-          </div> 
+      <!-- BACKGROUND IMAGE DENGAN EFEK PARALLAX -->
+      <div class="absolute inset-0 z-0 h-full w-full bg-[url('https://images.unsplash.com/photo-1781249144129-4ba0869707f5?w=1920&h=1080&fit=crop&auto=format')] bg-cover bg-center bg-no-repeat bg-fixed"></div>
+      
+      <!-- OVERLAY GELAP -->
+      <div class="absolute inset-0 z-10 bg-gradient-to-b from-[#0b2046]/70 via-[#0b2046]/40 to-[#0b2046]/80 backdrop-blur-[2px]"></div>
 
-          <!-- Search widget (Dibuat mt-6 agar lebih merapat, warna diperbaiki) -->
-          <div class="mt-6 rounded-2xl border border-[#e2e8f0] bg-white p-2.5 shadow-[0_20px_50px_-24px_rgba(11,42,85,0.4)]">
-            <div class="flex flex-col gap-2 sm:flex-row sm:items-center">
-              
-              <div class="flex flex-1 items-center gap-2.5 rounded-xl px-3 py-2.5">
-                <svg class="h-5 w-5 shrink-0 text-[#64748b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
-                <input class="w-full bg-transparent text-sm text-[#1e293b] outline-none placeholder:text-[#64748b]" placeholder="Cari kos, layanan, atau kebutuhanmu..." />
-              </div>
-              
-              <div class="flex items-center gap-2.5 border-t border-[#e2e8f0] px-3 py-2.5 sm:border-l sm:border-t-0">
-                <button class="flex items-center gap-1.5 text-sm font-medium text-[#0b2046]">
-                  Bandung
-                  <svg class="h-4 w-4 text-[#64748b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
-                </button>
-              </div>
-              
-              <button class="inline-flex items-center justify-center rounded-xl bg-[#E5B044] px-6 py-2.5 text-sm font-bold text-[#0b2046] transition hover:opacity-90">Cari</button>
-              
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Hero image with organic curve -->
-        <div class="relative animate-in-up">
-          <div class="absolute -right-6 -top-6 hidden h-32 w-32 rounded-full bg-[#E5B044]/15 blur-2xl lg:block"></div>
-          <div class="relative overflow-hidden rounded-[36px] rounded-tr-[120px] rounded-bl-[120px] bg-[#f8fafc] shadow-[0_30px_70px_-30px_rgba(11,42,85,0.5)]">
-            <img src="https://images.unsplash.com/photo-1781249144129-4ba0869707f5?w=900&h=1000&fit=crop&auto=format" alt="Interior kamar kos premium" class="aspect-[4/5] w-full object-cover" />
-          </div>
-          <div class="absolute -bottom-5 left-4 flex items-center gap-3 rounded-2xl border border-[#e2e8f0] bg-white/95 px-4 py-3 shadow-xl backdrop-blur sm:left-6">
-            <div class="grid h-11 w-11 place-items-center rounded-full bg-[#E5B044]/15">
-              <span class="text-[#E5B044] font-bold">★</span>
-            </div>
-            <div>
-              <div class="font-display text-base font-bold text-[#0b2046]">4.9/5.0</div>
-              <div class="text-[11px] text-[#64748b]">dari 12.400+ penghuni</div>
-            </div>
-          </div>
-          <div class="absolute -right-3 top-8 hidden h-14 w-14 rounded-2xl bg-[#E5B044]/80 sm:block"></div>
-        </div>
+      <div class="relative z-20 mx-auto flex w-full max-w-[1000px] flex-col items-center px-4 text-center sm:px-6">
         
+        <!-- BADGE -->
+        <span class="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-1.5 sm:px-4 sm:py-2 text-[10px] sm:text-[11px] font-semibold text-white shadow-sm backdrop-blur-md">
+          <span class="h-2 w-2 rounded-full bg-[#E5B044] animate-pulse"></span>
+          1 Student Living Platform di Indonesia
+        </span>
+        
+        <!-- JUDUL (Diperkecil sedikit di mobile agar tidak terpotong) -->
+        <h1 class="relative z-10 mt-5 sm:mt-6 font-display text-[32px] sm:text-[48px] lg:text-[72px] font-extrabold leading-tight text-white drop-shadow-lg">
+          Selamat Datang di
+        </h1>
+        
+        <!-- LOGO -->
+        <img src="/kosankampus.png" alt="Kosan Kampus" 
+             class="relative z-0 -mb-4 -mt-4 sm:-mt-6 h-[90px] sm:h-[150px] lg:h-[240px] lg:-mb-12 lg:-mt-16 w-auto object-contain brightness-0 invert drop-shadow-lg" />
+        
+        <!-- SUBJUDUL -->
+        <p class="relative z-10 mt-2 max-w-2xl px-2 text-[13px] sm:text-lg leading-relaxed text-white/90 drop-shadow-md">
+          Solusi lengkap untuk temukan kosan nyaman, fasilitas unggulan, dan hidup yang lebih mudah.
+        </p>
+        
+        <!-- SEARCH BAR FLOATING -->
+        <div class="mt-8 sm:mt-10 w-full max-w-3xl rounded-[20px] sm:rounded-full bg-white p-2 shadow-2xl sm:p-3">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+            
+            <div class="flex flex-1 items-center gap-3 rounded-xl px-3 py-2 sm:px-4 sm:py-2">
+              <svg class="h-5 w-5 sm:h-6 sm:w-6 shrink-0 text-[#64748b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
+              <input class="w-full bg-transparent text-[13px] sm:text-[15px] text-[#1e293b] outline-none placeholder:text-[#64748b]" placeholder="Cari kos, layanan, atau kebutuhanmu..." />
+            </div>
+            
+            <div class="flex items-center justify-between gap-2 sm:gap-3 border-t border-[#e2e8f0] px-3 pt-2 pb-1 sm:border-l sm:border-t-0 sm:px-4 sm:py-0">
+              <button onclick="toggleLocationModal()" type="button" class="flex items-center gap-1.5 text-[13px] sm:text-[15px] font-medium text-[#0b2046] transition hover:text-[#E5B044]">
+                <span id="heroLocText" class="truncate max-w-[120px] sm:max-w-none text-left">Pilih Universitas</span>
+                <svg class="h-3 w-3 sm:h-4 sm:w-4 shrink-0 text-[#64748b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+              </button>
+              <button type="button" class="inline-flex shrink-0 items-center justify-center rounded-full bg-[#E5B044] px-6 py-2.5 sm:px-8 sm:py-3.5 text-[13px] sm:text-[15px] font-bold text-[#0b2046] shadow-md transition hover:scale-105 hover:bg-[#F1C86D]">
+                Cari
+              </button>
+            </div>
+            
+          </div>
+        </div>
+
+       <!-- PENCARIAN POPULER (Disesuaikan untuk Mobile) -->
+        <div class="mt-6 sm:mt-8 flex flex-wrap items-center justify-center gap-2.5 sm:gap-4">
+          <!-- Href dirapikan (menghapus .blade.php) -->
+          <a href="/cari-kos" class="rounded-full border border-white/30 bg-white/10 px-4 py-2 sm:px-6 sm:py-2.5 text-[11px] sm:text-base font-medium text-white/90 backdrop-blur-md transition hover:bg-white/20 hover:text-white">
+            Kosan Dekat Kampus
+          </a>
+          <a href="#" class="rounded-full border border-white/30 bg-white/10 px-4 py-2 sm:px-6 sm:py-2.5 text-[11px] sm:text-base font-medium text-white/90 backdrop-blur-md transition hover:bg-white/20 hover:text-white">
+            Kosan Bersih & Nyaman
+          </a>
+        </div>  
+
+      </div>
+    </section>
+<!-- ================= 2. TENTANG KAMI (PENGGANTI BANNER) ================= -->
+    <section class="relative z-30 mx-auto max-w-[1280px] px-4 py-8 sm:px-6 mt-6 lg:-mt-24">
+      
+      <div class="relative overflow-hidden rounded-[24px] bg-gradient-to-r from-[#09152b] via-[#122345] to-[#243452] shadow-2xl">
+        
+        <!-- Efek Cahaya Dekoratif -->
+        <div class="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#E5B044]/10 blur-3xl"></div>
+        <div class="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-white/5 blur-3xl"></div>
+
+        <!-- Gunakan grid-cols-1 untuk Mobile (Atas & Bawah), grid-cols-12 untuk Desktop (Kiri & Kanan) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12">
+          
+          <!-- BAGIAN ATAS (Mobile) / KIRI (Desktop): Teks Perkenalan -->
+          <!-- Diberi border-b untuk memisahkan teks dan statistik di mobile -->
+          <div class="flex flex-col justify-center p-6 lg:p-10 lg:col-span-5 relative z-10 border-b border-white/10 lg:border-b-0 lg:border-r">
+            <div class="mb-4 w-max inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-[10px] lg:text-[11px] font-semibold text-[#E5B044] backdrop-blur-md">
+              Tentang Kami
+            </div>
+            <h2 class="font-display text-[22px] sm:text-[26px] lg:text-[32px] font-extrabold leading-tight text-white">
+              Lebih dari sekadar<br>tempat singgah.
+            </h2>
+            <p class="mt-3 lg:mt-4 text-[12px] lg:text-[14px] leading-relaxed text-white/70">
+              KOKA Property mendedikasikan diri sebagai platform Student Living #1 di Indonesia. Kami menyatukan hunian nyaman, transaksi aman, dan layanan harian dalam satu ekosistem.
+            </p>
+            <a href="/tentang-kami" class="group mt-5 lg:mt-6 w-max inline-flex items-center gap-2 text-[12px] lg:text-[13px] font-bold text-[#E5B044] transition hover:text-[#F1C86D]">
+              Mengenal KOKA Lebih Jauh
+              <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+            </a>
+          </div>
+
+          <!-- BAGIAN BAWAH (Mobile) / KANAN (Desktop): Statistik / Angka -->
+          <!-- Tetap dikunci 3 Kolom menyamping -->
+          <div class="grid grid-cols-3 lg:col-span-7 relative z-10">
+            
+            <!-- Stat 1 -->
+            <div class="flex flex-col items-center justify-center py-6 lg:py-12 px-1 lg:px-4 border-r border-white/10">
+              <div class="mb-2 lg:mb-3 grid h-10 w-10 lg:h-12 lg:w-12 place-items-center rounded-full bg-white/5 text-[#E5B044] ring-1 ring-white/10">
+                <svg class="h-4 w-4 lg:h-5 lg:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              </div>
+              <div class="font-display text-[16px] lg:text-[28px] font-bold text-white">1000+</div>
+              <div class="mt-1 text-[9px] lg:text-[12px] text-white/60 text-center leading-tight">Kos<br>Terverifikasi</div>
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="flex flex-col items-center justify-center py-6 lg:py-12 px-1 lg:px-4 border-r border-white/10">
+              <div class="mb-2 lg:mb-3 grid h-10 w-10 lg:h-12 lg:w-12 place-items-center rounded-full bg-white/5 text-[#E5B044] ring-1 ring-white/10">
+                <svg class="h-4 w-4 lg:h-5 lg:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+              </div>
+              <div class="font-display text-[16px] lg:text-[28px] font-bold text-white">12.4K</div>
+              <div class="mt-1 text-[9px] lg:text-[12px] text-white/60 text-center leading-tight">Penghuni<br>Aktif</div>
+            </div>
+
+            <!-- Stat 3 (Tanpa border karena ujung) -->
+            <div class="flex flex-col items-center justify-center py-6 lg:py-12 px-1 lg:px-4">
+              <div class="mb-2 lg:mb-3 grid h-10 w-10 lg:h-12 lg:w-12 place-items-center rounded-full bg-white/5 text-[#E5B044] ring-1 ring-white/10">
+                <svg class="h-4 w-4 lg:h-5 lg:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+              </div>
+              <div class="font-display text-[16px] lg:text-[28px] font-bold text-white">4.9/5</div>
+              <div class="mt-1 text-[9px] lg:text-[12px] text-white/60 text-center leading-tight">Rating<br>Kepuasan</div>
+            </div>
+
+          </div>
+
+        </div>
       </div>
     </section>
 
-    <!-- ================= QUICK ACTIONS ================= -->
-    <section class="mx-auto max-w-[1280px] px-4 sm:px-6">
-      <!-- BANNER KEUNGGULAN KOKA (4 KOLOM - PREMIUM ICONS) -->
-<div class="rounded-[24px] bg-[#0b2046] p-6 sm:px-8 sm:py-7">
-  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-white/10">
-    
-    <!-- Keunggulan 1: Terverifikasi -->
-    <div class="group flex items-center gap-4 lg:px-6 lg:first:pl-0 transition-transform duration-300 hover:-translate-y-1">
-      <div class="relative grid h-12 w-12 shrink-0 place-items-center rounded-[14px] bg-white shadow-sm overflow-hidden">
-        <!-- Aksen Emas Estetik -->
-        <div class="absolute -right-2 -top-2 h-7 w-7 rounded-full bg-[#E5B044]/25 transition-transform duration-500 group-hover:scale-150"></div>
-        <svg class="relative z-10 h-[22px] w-[22px] text-[#0b2046]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
-        </svg>
-      </div>
-      <div>
-        <h4 class="font-display text-[15px] font-bold text-white">Kos Terverifikasi</h4>
-        <p class="mt-0.5 text-[12px] leading-snug text-white/70">Pasti aman & sesuai dengan foto</p>
-      </div>
-    </div>
-
-    <!-- Keunggulan 2: Transaksi Aman -->
-    <div class="group flex items-center gap-4 lg:px-6 transition-transform duration-300 hover:-translate-y-1">
-      <div class="relative grid h-12 w-12 shrink-0 place-items-center rounded-[14px] bg-white shadow-sm overflow-hidden">
-        <div class="absolute -right-2 -top-2 h-7 w-7 rounded-full bg-[#E5B044]/25 transition-transform duration-500 group-hover:scale-150"></div>
-        <svg class="relative z-10 h-[22px] w-[22px] text-[#0b2046]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 00-2.25-2.25H15a3 3 0 11-6 0H4.5A2.25 2.25 0 002.25 12v6.75A2.25 2.25 0 004.5 21h15a2.25 2.25 0 002.25-2.25V12z" />
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5h15M4.5 10.5A2.25 2.25 0 016.75 8.25h10.5A2.25 2.25 0 0119.5 10.5M4.5 10.5v-6A2.25 2.25 0 016.75 2.25h10.5A2.25 2.25 0 0119.5 4.5v6M9 14.25h.008v.008H9v-.008z" />
-        </svg>
-      </div>
-      <div>
-        <h4 class="font-display text-[15px] font-bold text-white">Transaksi Aman</h4>
-        <p class="mt-0.5 text-[12px] leading-snug text-white/70">Pembayaran resmi anti penipuan</p>
-      </div>
-    </div>
-
-    <!-- Keunggulan 3: Fasilitas Lengkap -->
-    <div class="group flex items-center gap-4 lg:px-6 transition-transform duration-300 hover:-translate-y-1">
-      <div class="relative grid h-12 w-12 shrink-0 place-items-center rounded-[14px] bg-white shadow-sm overflow-hidden">
-        <div class="absolute -right-2 -top-2 h-7 w-7 rounded-full bg-[#E5B044]/25 transition-transform duration-500 group-hover:scale-150"></div>
-        <svg class="relative z-10 h-[22px] w-[22px] text-[#0b2046]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819" />
-        </svg>
-      </div>
-      <div>
-        <h4 class="font-display text-[15px] font-bold text-white">Fasilitas Lengkap</h4>
-        <p class="mt-0.5 text-[12px] leading-snug text-white/70">Kamar nyaman, tinggal bawa koper</p>
-      </div>
-    </div>
-
-    <!-- Keunggulan 4: Dukungan 24/7 -->
-    <div class="group flex items-center gap-4 lg:px-6 lg:last:pr-0 transition-transform duration-300 hover:-translate-y-1">
-      <div class="relative grid h-12 w-12 shrink-0 place-items-center rounded-[14px] bg-white shadow-sm overflow-hidden">
-        <div class="absolute -right-2 -top-2 h-7 w-7 rounded-full bg-[#E5B044]/25 transition-transform duration-500 group-hover:scale-150"></div>
-        <svg class="relative z-10 h-[22px] w-[22px] text-[#0b2046]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
-        </svg>
-      </div>
-      <div>
-        <h4 class="font-display text-[15px] font-bold text-white">Dukungan 24/7</h4>
-        <p class="mt-0.5 text-[12px] leading-snug text-white/70">Bantuan CS & layanan perbaikan kos</p>
-      </div>
-    </div>
-
-  </div>
-</div>
-    </section>
-
-    <!-- ================= LAYANAN KOKA LENGKAP ================= -->
+<!-- ================= LAYANAN KOKA LENGKAP ================= -->
     <section id="layanan" class="mx-auto max-w-[1280px] scroll-mt-20 px-4 py-16 sm:px-6 lg:py-20">
       <div class="mb-6 flex items-end justify-between">
         <div>
@@ -190,18 +163,18 @@
       <!-- Grid 10 Item -->
       <div class="grid grid-cols-2 gap-3.5 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
         
-        <!-- 1. KosanJek -->
+        <!-- 1. KosanJek (Tetap) -->
         <button onclick="openModal('KosanJek')" class="group flex flex-col items-start gap-3 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E5B044]/40 hover:shadow-md sm:p-5">
-        <div class="grid h-12 w-12 place-items-center rounded-xl bg-[#f8fafc] text-[#0b2046] transition group-hover:bg-[#0b2046] group-hover:text-[#E5B044]">
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M11 7c2 0 3-.5 3-.5s.5-1.5.5-2.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M14 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M6 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 14H14"/><path stroke-linecap="round" stroke-linejoin="round" d="m14 10-2-3-2 3H6.5"/><path stroke-linecap="round" stroke-linejoin="round" d="m8.5 11 2-4-2-4"/><path stroke-linecap="round" stroke-linejoin="round" d="M11.5 7h4"/><path stroke-linecap="round" stroke-linejoin="round" d="M19 10a1 1 0 0 0-1-1h-2.5"/></svg>
-        </div>
-        <div>
-            <div class="font-display text-[14px] font-semibold text-[#0b2046]">KosanJek</div>
-            <div class="mt-0.5 text-[11px] leading-snug text-[#64748b]">Antar-jemput & Pengantaran</div>
-        </div>
-    </button>
+            <div class="grid h-12 w-12 place-items-center rounded-xl bg-[#f8fafc] text-[#0b2046] transition group-hover:bg-[#0b2046] group-hover:text-[#E5B044]">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M11 7c2 0 3-.5 3-.5s.5-1.5.5-2.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M14 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M6 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 14H14"/><path stroke-linecap="round" stroke-linejoin="round" d="m14 10-2-3-2 3H6.5"/><path stroke-linecap="round" stroke-linejoin="round" d="m8.5 11 2-4-2-4"/><path stroke-linecap="round" stroke-linejoin="round" d="M11.5 7h4"/><path stroke-linecap="round" stroke-linejoin="round" d="M19 10a1 1 0 0 0-1-1h-2.5"/></svg>
+            </div>
+            <div>
+                <div class="font-display text-[14px] font-semibold text-[#0b2046]">KosanJek</div>
+                <div class="mt-0.5 text-[11px] leading-snug text-[#64748b]">Antar-jemput & Pengantaran</div>
+            </div>
+        </button>
 
-        <!-- 2. KosanMove -->
+        <!-- 2. KosanMove (Tetap) -->
         <button onclick="openModal('KosanMove')" class="group flex flex-col items-start gap-3 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E5B044]/40 hover:shadow-md sm:p-5">
           <div class="grid h-12 w-12 place-items-center rounded-xl bg-[#f8fafc] text-[#0b2046] transition group-hover:bg-[#0b2046] group-hover:text-[#E5B044]">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M5 18H3c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v11"/><path stroke-linecap="round" stroke-linejoin="round" d="M14 9h4l4 4v5c0 .6-.4 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
@@ -212,7 +185,7 @@
           </div>
         </button>
 
-        <!-- 3. KosanClean -->
+        <!-- 3. KosanClean (Tetap) -->
         <button onclick="openModal('KosanClean')" class="group flex flex-col items-start gap-3 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E5B044]/40 hover:shadow-md sm:p-5">
           <div class="grid h-12 w-12 place-items-center rounded-xl bg-[#f8fafc] text-[#0b2046] transition group-hover:bg-[#0b2046] group-hover:text-[#E5B044]">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3Z"/></svg>
@@ -223,19 +196,19 @@
           </div>
         </button>
 
-        <!-- 4. KosanFix -->
+        <!-- 4. KosanFix (Tetap) -->
         <button onclick="openModal('KosanFix')" class="group flex flex-col items-start gap-3 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E5B044]/40 hover:shadow-md sm:p-5">
           <div class="grid h-12 w-12 place-items-center rounded-xl bg-[#f8fafc] text-[#0b2046] transition group-hover:bg-[#0b2046] group-hover:text-[#E5B044]">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
           </div>
           <div>
-            <div  class="font-display text-[14px] font-semibold text-[#0b2046]">KosanFix</div>
+            <div class="font-display text-[14px] font-semibold text-[#0b2046]">KosanFix</div>
             <div class="mt-0.5 text-[11px] leading-snug text-[#64748b]">Perawatan & Perbaikan</div>
           </div>
         </button>
 
-        <!-- 5. KosanLaundry -->
-        <button onclick="openModal('KosanLaundry')" class="group flex flex-col items-start gap-3 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E5B044]/40 hover:shadow-md sm:p-5">
+        <!-- 5. KosanLaundry (Ubah ke Coming Soon) -->
+        <button onclick="openComingSoon('KosanLaundry')" class="group flex flex-col items-start gap-3 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E5B044]/40 hover:shadow-md sm:p-5">
           <div class="grid h-12 w-12 place-items-center rounded-xl bg-[#f8fafc] text-[#0b2046] transition group-hover:bg-[#0b2046] group-hover:text-[#E5B044]">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
           </div>
@@ -245,8 +218,8 @@
           </div>
         </button>
 
-        <!-- 6. KosanMart -->
-        <button onclick="openModal('KosanMart')" class="group flex flex-col items-start gap-3 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E5B044]/40 hover:shadow-md sm:p-5">
+        <!-- 6. KosanMart (Ubah ke Coming Soon) -->
+        <button onclick="openComingSoon('KosanMart')" class="group flex flex-col items-start gap-3 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E5B044]/40 hover:shadow-md sm:p-5">
           <div class="grid h-12 w-12 place-items-center rounded-xl bg-[#f8fafc] text-[#0b2046] transition group-hover:bg-[#0b2046] group-hover:text-[#E5B044]">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="m5 11 4-7"/><path stroke-linecap="round" stroke-linejoin="round" d="m19 11-4-7"/><path stroke-linecap="round" stroke-linejoin="round" d="M2 11h20"/><path stroke-linecap="round" stroke-linejoin="round" d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8c.9 0 1.8-.7 2-1.6l1.7-7.4"/></svg>
           </div>
@@ -256,8 +229,8 @@
           </div>
         </button>
 
-        <!-- 7. KosanStorage -->
-        <button onclick="openModal('KosanStorage')" class="group flex flex-col items-start gap-3 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E5B044]/40 hover:shadow-md sm:p-5">
+        <!-- 7. KosanStorage (Ubah ke Coming Soon) -->
+        <button onclick="openComingSoon('KosanStorage')" class="group flex flex-col items-start gap-3 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E5B044]/40 hover:shadow-md sm:p-5">
           <div class="grid h-12 w-12 place-items-center rounded-xl bg-[#f8fafc] text-[#0b2046] transition group-hover:bg-[#0b2046] group-hover:text-[#E5B044]">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="m7.5 4.27 9 5.15"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m3.3 7 8.7 5 8.7-5"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 22V12"/></svg>
           </div>
@@ -267,8 +240,8 @@
           </div>
         </button>
 
-        <!-- 8. Lapor Masalah -->
-        <button onclick="openModal('LaporMasalah')" class="group flex flex-col items-start gap-3 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E5B044]/40 hover:shadow-md sm:p-5">
+        <!-- 8. Lapor Masalah (Ubah ke Coming Soon) -->
+        <button onclick="openComingSoon('Lapor Masalah')" class="group flex flex-col items-start gap-3 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E5B044]/40 hover:shadow-md sm:p-5">
           <div class="grid h-12 w-12 place-items-center rounded-xl bg-[#f8fafc] text-[#0b2046] transition group-hover:bg-[#0b2046] group-hover:text-[#E5B044]">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path stroke-linecap="round" stroke-linejoin="round" d="M4 22v-7"/></svg>
           </div>
@@ -278,8 +251,8 @@
           </div>
         </button>
 
-        <!-- 9. KOKA Rewards -->
-        <button onclick="openModal('KOKARewards')" class="group flex flex-col items-start gap-3 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E5B044]/40 hover:shadow-md sm:p-5">
+        <!-- 9. KOKA Rewards (Ubah ke Coming Soon) -->
+        <button onclick="openComingSoon('KOKA Rewards')" class="group flex flex-col items-start gap-3 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E5B044]/40 hover:shadow-md sm:p-5">
           <div class="grid h-12 w-12 place-items-center rounded-xl bg-[#f8fafc] text-[#0b2046] transition group-hover:bg-[#0b2046] group-hover:text-[#E5B044]">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><rect x="3" y="8" width="18" height="4" rx="1"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13"/><path stroke-linecap="round" stroke-linejoin="round" d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>
           </div>
@@ -289,8 +262,8 @@
           </div>
         </button>
 
-        <!-- 10. KOKA Care -->
-        <button onclick="openModal('KOKACare')" class="group flex flex-col items-start gap-3 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E5B044]/40 hover:shadow-md sm:p-5">
+        <!-- 10. KOKA Care (Ubah ke Coming Soon) -->
+        <button onclick="openComingSoon('KOKA Care')" class="group flex flex-col items-start gap-3 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E5B044]/40 hover:shadow-md sm:p-5">
           <div class="grid h-12 w-12 place-items-center rounded-xl bg-[#f8fafc] text-[#0b2046] transition group-hover:bg-[#0b2046] group-hover:text-[#E5B044]">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg>
           </div>
@@ -307,175 +280,178 @@
 
     
     <!-- ================= REKOMENDASI KOS ================= -->
-    <section class="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 lg:py-20 font-sans">
+    <!-- py-10 untuk mobile, lg:py-20 untuk desktop agar jarak proporsional -->
+    <section class="mx-auto max-w-[1280px] px-4 py-10 sm:px-6 lg:py-20 font-sans overflow-hidden">
       
       <!-- Header Section -->
-      <div class="mb-8 flex items-end justify-between">
-        <div>
-          <h2 class="font-display text-[24px] lg:text-[28px] font-extrabold text-[#0b2046]">Rekomendasi Kos untukmu</h2>
-          <p class="mt-2 text-[14px] text-[#64748b]">Pilihan kos terbaik yang paling banyak diminati bulan ini.</p>
+      <div class="mb-6 flex flex-row items-end justify-between gap-4">
+        <div class="flex-1">
+          <h2 class="font-display text-[20px] sm:text-[24px] lg:text-[28px] font-extrabold text-[#0b2046] leading-tight">Rekomendasi Kos untukmu</h2>
+          <p class="mt-1 sm:mt-2 text-[12px] sm:text-[14px] text-[#64748b]">Pilihan kos terbaik yang paling banyak diminati bulan ini.</p>
         </div>
-        <button class="hidden sm:flex items-center gap-1 text-[14px] font-bold text-[#0b2046] hover:text-[#E5B044] transition">
-          Lihat Semua →
-        </button>
+        <!-- Tombol Lihat Semua (Sekarang tampil di mobile) -->
+        <a href="/cari-kos" class="shrink-0 flex items-center gap-1 text-[12px] sm:text-[14px] font-bold text-[#E5B044] hover:text-[#F1C86D] transition pb-0.5">
+          Lihat Semua <span class="text-[14px] sm:text-[16px]">→</span>
+        </a>
       </div>
 
-      <!-- Grid Carousel -->
-      <div class="no-scrollbar -mx-4 flex snap-x gap-5 overflow-x-auto px-4 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:px-0">
+      <!-- Grid Carousel (Bisa di-swipe di Mobile, Grid normal di Desktop) -->
+      <!-- snap-mandatory membuat geseran berhenti mulus pada kartu -->
+      <div class="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-6 sm:mx-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 sm:px-0 sm:pb-0">
         
         <!-- CARD 1: Wisma Kampus Hasanah -->
-        <div class="w-[85%] shrink-0 snap-start sm:w-auto">
-          <!-- Mengubah div luar menjadi a href -->
-          <a href="/detail-kos" class="block group relative overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:shadow-md cursor-pointer">
+        <!-- w-[280px] agar pas di layar HP, snap-center agar berhenti di tengah -->
+        <div class="w-[280px] shrink-0 snap-center sm:w-auto">
+          <a href="/detail-kos" class="block group relative overflow-hidden rounded-[20px] sm:rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:shadow-md cursor-pointer">
             
-            <!-- Gambar & Overlay -->
-            <div class="relative h-[200px] w-full overflow-hidden bg-gray-100">
+            <!-- h-[160px] untuk mobile, h-[200px] untuk sm/desktop -->
+            <div class="relative h-[160px] sm:h-[200px] w-full overflow-hidden bg-gray-100">
                 <img src="https://images.unsplash.com/photo-1522771731570-8682deb54f5c?w=400&h=300&fit=crop&auto=format" alt="Wisma Kampus Hasanah" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                 
-                <!-- Badge Kiri Atas -->
-                <span class="absolute left-3 top-3 z-10 rounded-full bg-[#0b2046] px-3 py-1.5 text-[11px] font-semibold text-white">
+                <span class="absolute left-3 top-3 z-10 rounded-full bg-[#0b2046] px-3 py-1.5 text-[10px] sm:text-[11px] font-semibold text-white shadow-sm">
                   Kosan Kampus
                 </span>
                 
-                <!-- Tombol Heart Kanan Atas (Ditambahkan preventDefault) -->
-                <button onclick="event.preventDefault(); this.classList.toggle('text-red-500'); this.classList.toggle('text-gray-400')" class="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-400 shadow-sm transition hover:scale-110">
-                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                <button onclick="event.preventDefault(); event.stopPropagation(); this.classList.toggle('text-red-500'); this.classList.toggle('text-gray-400')" class="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-400 shadow-sm transition hover:scale-110">
+                  <svg class="h-4 w-4 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
                 </button>
             </div>
             
-            <!-- Konten Text -->
-            <div class="p-5">
+            <div class="p-4 sm:p-5">
               <div class="flex items-start justify-between gap-2">
-                <h3 class="font-display text-[15px] font-bold text-[#0b2046] line-clamp-1">Wisma Kampus Hasanah</h3>
-                <div class="flex shrink-0 items-center gap-1 text-[13px] font-bold text-[#64748b]">
-                  <span class="text-[#E5B044] text-[14px]">★</span> 4.8
+                <h3 class="font-display text-[14px] sm:text-[15px] font-bold text-[#0b2046] line-clamp-1">Wisma Kampus Hasanah</h3>
+                <div class="flex shrink-0 items-center gap-1 text-[12px] sm:text-[13px] font-bold text-[#64748b]">
+                  <span class="text-[#E5B044] text-[13px] sm:text-[14px]">★</span> 4.8
                 </div>
               </div>
-              <div class="mt-1.5 flex items-center gap-1.5 text-[12px] text-[#64748b]">
-                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>
-                Buah Batu, Bandung
+              <div class="mt-1.5 flex items-center gap-1.5 text-[11px] sm:text-[12px] text-[#64748b]">
+                <svg class="h-3.5 w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>
+                <span class="truncate">Buah Batu, Bandung</span>
               </div>
               
-              <!-- Fasilitas -->
-              <div class="mt-4 flex flex-wrap gap-4 text-[11px] font-medium text-gray-500">
-                <span>Kamar Mandi Dalam</span>
-                <span>AC</span>
-                <span>WiFi</span>
+              <div class="mt-3 sm:mt-4 flex flex-wrap gap-2 sm:gap-4 text-[10px] sm:text-[11px] font-medium text-gray-500">
+                <span class="rounded-md bg-gray-50 px-2 py-1">Kamar Mandi Dalam</span>
+                <span class="rounded-md bg-gray-50 px-2 py-1">AC</span>
+                <span class="rounded-md bg-gray-50 px-2 py-1">WiFi</span>
               </div>
               
-              <!-- Harga -->
-              <div class="mt-6 flex flex-col">
-                <span class="font-display text-[16px] font-extrabold text-[#0b2046]">Rp 12.000.000</span>
-                <span class="mt-0.5 text-[11px] text-[#64748b]">per tahun</span>
+              <div class="mt-4 sm:mt-6 flex flex-col">
+                <span class="font-display text-[15px] sm:text-[16px] font-extrabold text-[#0b2046]">Rp 12.000.000</span>
+                <span class="mt-0.5 text-[10px] sm:text-[11px] text-[#64748b]">per tahun</span>
               </div>
             </div>
           </a>
         </div>
 
         <!-- CARD 2: Pondok Ilmu -->
-        <div class="w-[85%] shrink-0 snap-start sm:w-auto">
-          <a href="/detail-kos" class="block group relative overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:shadow-md cursor-pointer">
-            <div class="relative h-[200px] w-full overflow-hidden bg-gray-100">
+        <div class="w-[280px] shrink-0 snap-center sm:w-auto">
+          <a href="/detail-kos" class="block group relative overflow-hidden rounded-[20px] sm:rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:shadow-md cursor-pointer">
+            <div class="relative h-[160px] sm:h-[200px] w-full overflow-hidden bg-gray-100">
                 <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop&auto=format" alt="Pondok Ilmu" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-                <span class="absolute left-3 top-3 z-10 rounded-full bg-[#0b2046] px-3 py-1.5 text-[11px] font-semibold text-white">
+                <span class="absolute left-3 top-3 z-10 rounded-full bg-[#0b2046] px-3 py-1.5 text-[10px] sm:text-[11px] font-semibold text-white shadow-sm">
                   Kosan Kampus
                 </span>
-                <button onclick="event.preventDefault(); this.classList.toggle('text-red-500'); this.classList.toggle('text-gray-400')" class="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-400 shadow-sm transition hover:scale-110">
-                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                
+                <button onclick="event.preventDefault(); event.stopPropagation(); this.classList.toggle('text-red-500'); this.classList.toggle('text-gray-400')" class="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-400 shadow-sm transition hover:scale-110">
+                  <svg class="h-4 w-4 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
                 </button>
             </div>
-            <div class="p-5">
+            <div class="p-4 sm:p-5">
               <div class="flex items-start justify-between gap-2">
-                <h3 class="font-display text-[15px] font-bold text-[#0b2046] line-clamp-1">Pondok Ilmu</h3>
-                <div class="flex shrink-0 items-center gap-1 text-[13px] font-bold text-[#64748b]">
-                  <span class="text-[#E5B044] text-[14px]">★</span> 4.7
+                <h3 class="font-display text-[14px] sm:text-[15px] font-bold text-[#0b2046] line-clamp-1">Pondok Ilmu</h3>
+                <div class="flex shrink-0 items-center gap-1 text-[12px] sm:text-[13px] font-bold text-[#64748b]">
+                  <span class="text-[#E5B044] text-[13px] sm:text-[14px]">★</span> 4.7
                 </div>
               </div>
-              <div class="mt-1.5 flex items-center gap-1.5 text-[12px] text-[#64748b]">
-                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>
-                Sukapura, Bandung
+              <div class="mt-1.5 flex items-center gap-1.5 text-[11px] sm:text-[12px] text-[#64748b]">
+                <svg class="h-3.5 w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>
+                <span class="truncate">Sukapura, Bandung</span>
               </div>
-              <div class="mt-4 flex flex-wrap gap-4 text-[11px] font-medium text-gray-500">
-                <span>WiFi</span>
-                <span>Furnished</span>
+              <div class="mt-3 sm:mt-4 flex flex-wrap gap-2 sm:gap-4 text-[10px] sm:text-[11px] font-medium text-gray-500">
+                <span class="rounded-md bg-gray-50 px-2 py-1">WiFi</span>
+                <span class="rounded-md bg-gray-50 px-2 py-1">Furnished</span>
               </div>
-              <div class="mt-6 flex flex-col">
-                <span class="font-display text-[16px] font-extrabold text-[#0b2046]">Rp 11.000.000</span>
-                <span class="mt-0.5 text-[11px] text-[#64748b]">per tahun</span>
+              <div class="mt-4 sm:mt-6 flex flex-col">
+                <span class="font-display text-[15px] sm:text-[16px] font-extrabold text-[#0b2046]">Rp 11.000.000</span>
+                <span class="mt-0.5 text-[10px] sm:text-[11px] text-[#64748b]">per tahun</span>
               </div>
             </div>
           </a>
         </div>
 
         <!-- CARD 3: Puri Ananda -->
-        <div class="w-[85%] shrink-0 snap-start sm:w-auto">
-          <a href="/detail-kos" class="block group relative overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:shadow-md cursor-pointer">
-            <div class="relative h-[200px] w-full overflow-hidden bg-gray-100">
+        <div class="w-[280px] shrink-0 snap-center sm:w-auto">
+          <a href="/detail-kos" class="block group relative overflow-hidden rounded-[20px] sm:rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:shadow-md cursor-pointer">
+            <div class="relative h-[160px] sm:h-[200px] w-full overflow-hidden bg-gray-100">
                 <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=400&h=300&fit=crop&auto=format" alt="Puri Ananda" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-                <span class="absolute left-3 top-3 z-10 rounded-full bg-[#0b2046] px-3 py-1.5 text-[11px] font-semibold text-white">
+                <span class="absolute left-3 top-3 z-10 rounded-full bg-[#0b2046] px-3 py-1.5 text-[10px] sm:text-[11px] font-semibold text-white shadow-sm">
                   Eksklusif
                 </span>
-                <button onclick="event.preventDefault(); this.classList.toggle('text-red-500'); this.classList.toggle('text-gray-400')" class="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-400 shadow-sm transition hover:scale-110">
-                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                
+                <button onclick="event.preventDefault(); event.stopPropagation(); this.classList.toggle('text-red-500'); this.classList.toggle('text-gray-400')" class="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-400 shadow-sm transition hover:scale-110">
+                  <svg class="h-4 w-4 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
                 </button>
             </div>
-            <div class="p-5">
+            <div class="p-4 sm:p-5">
               <div class="flex items-start justify-between gap-2">
-                <h3 class="font-display text-[15px] font-bold text-[#0b2046] line-clamp-1">Puri Ananda</h3>
-                <div class="flex shrink-0 items-center gap-1 text-[13px] font-bold text-[#64748b]">
-                  <span class="text-[#E5B044] text-[14px]">★</span> 4.9
+                <h3 class="font-display text-[14px] sm:text-[15px] font-bold text-[#0b2046] line-clamp-1">Puri Ananda</h3>
+                <div class="flex shrink-0 items-center gap-1 text-[12px] sm:text-[13px] font-bold text-[#64748b]">
+                  <span class="text-[#E5B044] text-[13px] sm:text-[14px]">★</span> 4.9
                 </div>
               </div>
-              <div class="mt-1.5 flex items-center gap-1.5 text-[12px] text-[#64748b]">
-                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>
-                Dago, Bandung
+              <div class="mt-1.5 flex items-center gap-1.5 text-[11px] sm:text-[12px] text-[#64748b]">
+                <svg class="h-3.5 w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>
+                <span class="truncate">Dago, Bandung</span>
               </div>
-              <div class="mt-4 flex flex-wrap gap-4 text-[11px] font-medium text-gray-500">
-                <span>AC</span>
-                <span>Parkir</span>
+              <div class="mt-3 sm:mt-4 flex flex-wrap gap-2 sm:gap-4 text-[10px] sm:text-[11px] font-medium text-gray-500">
+                <span class="rounded-md bg-gray-50 px-2 py-1">AC</span>
+                <span class="rounded-md bg-gray-50 px-2 py-1">Parkir</span>
               </div>
-              <div class="mt-6 flex flex-col">
-                <span class="font-display text-[16px] font-extrabold text-[#0b2046]">Rp 15.000.000</span>
-                <span class="mt-0.5 text-[11px] text-[#64748b]">per tahun</span>
+              <div class="mt-4 sm:mt-6 flex flex-col">
+                <span class="font-display text-[15px] sm:text-[16px] font-extrabold text-[#0b2046]">Rp 15.000.000</span>
+                <span class="mt-0.5 text-[10px] sm:text-[11px] text-[#64748b]">per tahun</span>
               </div>
             </div>
           </a>
         </div>
 
         <!-- CARD 4: Hesma Residence -->
-        <div class="w-[85%] shrink-0 snap-start sm:w-auto">
-          <a href="/detail-kos" class="block group relative overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:shadow-md cursor-pointer">
-            <div class="relative h-[200px] w-full overflow-hidden bg-gray-100">
+        <div class="w-[280px] shrink-0 snap-center sm:w-auto">
+          <a href="/detail-kos" class="block group relative overflow-hidden rounded-[20px] sm:rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:shadow-md cursor-pointer">
+            <div class="relative h-[160px] sm:h-[200px] w-full overflow-hidden bg-gray-100">
                 <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=400&h=300&fit=crop&auto=format" alt="Hesma Residence" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-                <span class="absolute left-3 top-3 z-10 rounded-full bg-[#0b2046] px-3 py-1.5 text-[11px] font-semibold text-white">
+                <span class="absolute left-3 top-3 z-10 rounded-full bg-[#0b2046] px-3 py-1.5 text-[10px] sm:text-[11px] font-semibold text-white shadow-sm">
                   Kosan Kampus
                 </span>
-                <button onclick="event.preventDefault(); this.classList.toggle('text-red-500'); this.classList.toggle('text-gray-400')" class="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-400 shadow-sm transition hover:scale-110">
-                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                
+                <button onclick="event.preventDefault(); event.stopPropagation(); this.classList.toggle('text-red-500'); this.classList.toggle('text-gray-400')" class="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-400 shadow-sm transition hover:scale-110">
+                  <svg class="h-4 w-4 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
                 </button>
             </div>
-            <div class="p-5">
+            <div class="p-4 sm:p-5">
               <div class="flex items-start justify-between gap-2">
-                <h3 class="font-display text-[15px] font-bold text-[#0b2046] line-clamp-1">Hesma Residence</h3>
-                <div class="flex shrink-0 items-center gap-1 text-[13px] font-bold text-[#64748b]">
-                  <span class="text-[#E5B044] text-[14px]">★</span> 4.6
+                <h3 class="font-display text-[14px] sm:text-[15px] font-bold text-[#0b2046] line-clamp-1">Hesma Residence</h3>
+                <div class="flex shrink-0 items-center gap-1 text-[12px] sm:text-[13px] font-bold text-[#64748b]">
+                  <span class="text-[#E5B044] text-[13px] sm:text-[14px]">★</span> 4.6
                 </div>
               </div>
-              <div class="mt-1.5 flex items-center gap-1.5 text-[12px] text-[#64748b]">
-                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>
-                Buah Batu, Bandung
+              <div class="mt-1.5 flex items-center gap-1.5 text-[11px] sm:text-[12px] text-[#64748b]">
+                <svg class="h-3.5 w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>
+                <span class="truncate">Buah Batu, Bandung</span>
               </div>
-              <div class="mt-4 flex flex-wrap gap-4 text-[11px] font-medium text-gray-500">
-                <span>Kamar Mandi Dalam</span>
-                <span>WiFi</span>
+              <div class="mt-3 sm:mt-4 flex flex-wrap gap-2 sm:gap-4 text-[10px] sm:text-[11px] font-medium text-gray-500">
+                <span class="rounded-md bg-gray-50 px-2 py-1">Kamar Mandi Dalam</span>
+                <span class="rounded-md bg-gray-50 px-2 py-1">WiFi</span>
               </div>
-              <div class="mt-6 flex flex-col">
-                <span class="font-display text-[16px] font-extrabold text-[#0b2046]">Rp 15.000.000</span>
-                <span class="mt-0.5 text-[11px] text-[#64748b]">per tahun</span>
+              <div class="mt-4 sm:mt-6 flex flex-col">
+                <span class="font-display text-[15px] sm:text-[16px] font-extrabold text-[#0b2046]">Rp 15.000.000</span>
+                <span class="mt-0.5 text-[10px] sm:text-[11px] text-[#64748b]">per tahun</span>
               </div>
             </div>
           </a>
         </div>
+
+      </div>
     </section>
 
     <!-- ================= PROMO BANNER ================= -->
@@ -573,53 +549,66 @@
       </div>
     </section>
 
-    <!-- ================= KOTA POPULER ================= -->
-    <section class="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 lg:py-20">
+    <!-- ================= KAMPUS POPULER ================= -->
+    <section class="mx-auto max-w-[1280px] px-4 py-12 sm:px-6 lg:py-20 overflow-hidden">
       <div class="mb-6">
-        <h2 class="font-display text-2xl font-bold text-navy sm:text-3xl">Kota Populer</h2>
-        <p class="mt-2 text-sm text-slate">Temukan kos idamanmu di kota-kota pelajar terbaik Indonesia.</p>
+        <h2 class="font-display text-[20px] sm:text-[24px] lg:text-[28px] font-extrabold text-navy">Kampus Populer</h2>
+        <p class="mt-1 sm:mt-2 text-[12px] sm:text-[14px] text-slate">Temukan kos idamanmu di Kampus-kampus pelajar terbaik Indonesia.</p>
       </div>
-      <div class="no-scrollbar -mx-4 flex snap-x gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:px-0 lg:grid-cols-5">
-        <button class="group relative h-52 w-[60%] shrink-0 snap-start overflow-hidden rounded-2xl sm:w-auto">
-          <img src="https://images.unsplash.com/photo-1549473889-14f410d83298?q=80&w=400&auto=format&fit=crop" alt="Kos di Bandung" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-          <div class="absolute inset-0 bg-gradient-to-t from-navy/85 via-navy/20 to-transparent"></div>
-          <div class="absolute inset-x-0 bottom-0 p-4 text-left">
-            <div class="font-display text-lg font-bold text-white">Bandung</div>
-            <div class="text-xs text-white/70">450+ Kos</div>
+      
+      <!-- Carousel dengan snap-mandatory agar geseran berhenti pas di tengah kartu -->
+      <div class="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-5 sm:px-0 lg:grid-cols-5">
+        
+        <!-- 1. Telkom University -->
+        <button class="group relative h-48 sm:h-52 w-[75%] sm:w-auto shrink-0 snap-center overflow-hidden rounded-[20px] sm:rounded-2xl text-left shadow-sm transition hover:shadow-md">
+          <img src="https://images.unsplash.com/photo-1549473889-14f410d83298?q=80&w=400&auto=format&fit=crop" alt="Telkom University" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent"></div>
+          <div class="absolute inset-x-0 bottom-0 p-4">
+            <div class="font-display text-[15px] sm:text-lg font-bold text-white leading-snug">Telkom University</div>
+            <div class="mt-0.5 text-[11px] sm:text-xs text-white/80 font-medium">450+ Kos</div>
           </div>
         </button>
-        <button class="group relative h-52 w-[60%] shrink-0 snap-start overflow-hidden rounded-2xl sm:w-auto">
-          <img src="https://images.unsplash.com/photo-1555899434-94d1368aa7af?q=80&w=400&auto=format&fit=crop" alt="Kos di Jakarta" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-          <div class="absolute inset-0 bg-gradient-to-t from-navy/85 via-navy/20 to-transparent"></div>
-          <div class="absolute inset-x-0 bottom-0 p-4 text-left">
-            <div class="font-display text-lg font-bold text-white">Jakarta</div>
-            <div class="text-xs text-white/70">820+ Kos</div>
+
+        <!-- 2. Universitas Indonesia -->
+        <button class="group relative h-48 sm:h-52 w-[75%] sm:w-auto shrink-0 snap-center overflow-hidden rounded-[20px] sm:rounded-2xl text-left shadow-sm transition hover:shadow-md">
+          <img src="https://images.unsplash.com/photo-1555899434-94d1368aa7af?q=80&w=400&auto=format&fit=crop" alt="Universitas Indonesia" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent"></div>
+          <div class="absolute inset-x-0 bottom-0 p-4">
+            <div class="font-display text-[15px] sm:text-lg font-bold text-white leading-snug">Universitas Indonesia</div>
+            <div class="mt-0.5 text-[11px] sm:text-xs text-white/80 font-medium">820+ Kos</div>
           </div>
         </button>
-        <button class="group relative h-52 w-[60%] shrink-0 snap-start overflow-hidden rounded-2xl sm:w-auto">
-          <img src="https://images.unsplash.com/photo-1584824388155-24d45d6540d9?q=80&w=400&auto=format&fit=crop" alt="Kos di Yogyakarta" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-          <div class="absolute inset-0 bg-gradient-to-t from-navy/85 via-navy/20 to-transparent"></div>
-          <div class="absolute inset-x-0 bottom-0 p-4 text-left">
-            <div class="font-display text-lg font-bold text-white">Yogyakarta</div>
-            <div class="text-xs text-white/70">310+ Kos</div>
+
+        <!-- 3. Universitas Gadjah Mada -->
+        <button class="group relative h-48 sm:h-52 w-[75%] sm:w-auto shrink-0 snap-center overflow-hidden rounded-[20px] sm:rounded-2xl text-left shadow-sm transition hover:shadow-md">
+          <img src="https://images.unsplash.com/photo-1584824388155-24d45d6540d9?q=80&w=400&auto=format&fit=crop" alt="Universitas Gadjah Mada" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent"></div>
+          <div class="absolute inset-x-0 bottom-0 p-4">
+            <div class="font-display text-[15px] sm:text-lg font-bold text-white leading-snug">Universitas Gadjah Mada</div>
+            <div class="mt-0.5 text-[11px] sm:text-xs text-white/80 font-medium">310+ Kos</div>
           </div>
         </button>
-        <button class="group relative h-52 w-[60%] shrink-0 snap-start overflow-hidden rounded-2xl sm:w-auto">
-          <img src="https://images.unsplash.com/photo-1577977464228-b0a514d24a90?q=80&w=400&auto=format&fit=crop" alt="Kos di Surabaya" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-          <div class="absolute inset-0 bg-gradient-to-t from-navy/85 via-navy/20 to-transparent"></div>
-          <div class="absolute inset-x-0 bottom-0 p-4 text-left">
-            <div class="font-display text-lg font-bold text-white">Surabaya</div>
-            <div class="text-xs text-white/70">280+ Kos</div>
+
+        <!-- 4. Universitas Surabaya -->
+        <button class="group relative h-48 sm:h-52 w-[75%] sm:w-auto shrink-0 snap-center overflow-hidden rounded-[20px] sm:rounded-2xl text-left shadow-sm transition hover:shadow-md">
+          <img src="https://images.unsplash.com/photo-1577977464228-b0a514d24a90?q=80&w=400&auto=format&fit=crop" alt="Universitas Surabaya" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent"></div>
+          <div class="absolute inset-x-0 bottom-0 p-4">
+            <div class="font-display text-[15px] sm:text-lg font-bold text-white leading-snug">Universitas Surabaya</div>
+            <div class="mt-0.5 text-[11px] sm:text-xs text-white/80 font-medium">280+ Kos</div>
           </div>
         </button>
-        <button class="group relative h-52 w-[60%] shrink-0 snap-start overflow-hidden rounded-2xl sm:w-auto">
-          <img src="https://images.unsplash.com/photo-1616857643329-a111a681c1c9?q=80&w=400&auto=format&fit=crop" alt="Kos di Malang" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-          <div class="absolute inset-0 bg-gradient-to-t from-navy/85 via-navy/20 to-transparent"></div>
-          <div class="absolute inset-x-0 bottom-0 p-4 text-left">
-            <div class="font-display text-lg font-bold text-white">Malang</div>
-            <div class="text-xs text-white/70">150+ Kos</div>
+
+        <!-- 5. Universitas Malang -->
+        <button class="group relative h-48 sm:h-52 w-[75%] sm:w-auto shrink-0 snap-center overflow-hidden rounded-[20px] sm:rounded-2xl text-left shadow-sm transition hover:shadow-md">
+          <img src="https://images.unsplash.com/photo-1616857643329-a111a681c1c9?q=80&w=400&auto=format&fit=crop" alt="Universitas Malang" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent"></div>
+          <div class="absolute inset-x-0 bottom-0 p-4">
+            <div class="font-display text-[15px] sm:text-lg font-bold text-white leading-snug">Universitas Malang</div>
+            <div class="mt-0.5 text-[11px] sm:text-xs text-white/80 font-medium">150+ Kos</div>
           </div>
         </button>
+
       </div>
     </section>
 
@@ -881,7 +870,50 @@
         </div>
       </div>
     </section>
+<!-- ================= MODAL COMING SOON ================= -->
+  <!-- Menggunakan items-center dan p-4 agar selalu di tengah dan tidak mentok ujung layar HP -->
+  <div id="comingSoonModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 transition-opacity">
+    
+    <!-- Overlay Gelap -->
+    <div class="absolute inset-0 bg-[#0b2046]/40 backdrop-blur-sm transition-opacity" onclick="closeComingSoon()"></div>
+    
+    <!-- Kotak Modal (Selalu di Tengah Layar, Diperkecil untuk Mobile) -->
+    <!-- max-w-[340px] untuk mobile agar tidak terlalu lebar, max-w-sm untuk desktop -->
+    <div role="dialog" aria-modal="true" class="relative flex w-full max-w-[340px] sm:max-w-sm flex-col overflow-hidden rounded-[24px] sm:rounded-[32px] bg-white shadow-2xl animate-in-up scale-95 transition-all duration-300" id="comingSoonPanel">
+      
+      <!-- Tombol Tutup X di Kanan Atas -->
+      <div class="absolute right-4 top-4 sm:right-5 sm:top-5 z-10">
+        <button onclick="closeComingSoon()" aria-label="Tutup" class="grid h-8 w-8 place-items-center rounded-full bg-[#f8fafc] text-[#0b2046] transition hover:bg-[#e2e8f0]">
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+      </div>
 
+      <!-- Konten Modal (Padding dan Ikon disesuaikan) -->
+      <div class="flex flex-col items-center px-5 py-8 sm:px-6 sm:py-10 text-center">
+        
+        <!-- Ikon Waktu/Roket -->
+        <div class="relative grid h-16 w-16 sm:h-20 sm:w-20 place-items-center rounded-full bg-[#0b2046] text-[#E5B044] shadow-md">
+            <svg class="h-8 w-8 sm:h-10 sm:w-10 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75" style="animation-duration: 2s;">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <div class="absolute -right-1 -top-1 h-3 w-3 sm:h-4 sm:w-4 rounded-full bg-[#E5B044] animate-ping"></div>
+        </div>
+        
+        <!-- Judul Dinamis -->
+        <h4 class="mt-5 sm:mt-6 font-display text-[17px] sm:text-[20px] font-extrabold text-[#0b2046]">Fitur yang akan datang</h4>
+        
+        <p class="mt-2 text-[12px] sm:text-[14px] leading-relaxed text-[#64748b]">
+          Layanan <span id="comingSoonTitle" class="font-bold text-[#0b2046]">Nama Layanan</span> sedang dalam tahap pengembangan. Nantikan *update* terbaru dari kami segera!
+        </p>
+        
+        <!-- Tombol Aksi (Disesuaikan ukurannya) -->
+        <button onclick="closeComingSoon()" class="mt-6 sm:mt-8 w-full rounded-full bg-[#E5B044] px-6 py-3 sm:py-3.5 text-[13px] sm:text-[14px] font-bold text-[#0b2046] shadow-sm transition hover:scale-105 hover:bg-[#F1C86D]">
+          Oke, Mengerti
+        </button>
+
+      </div>
+    </div>
+  </div>
   </main>
   <x-modal-layanan />
   <x-footer />
@@ -1000,6 +1032,31 @@
         iconMinus.classList.remove('hidden');
       }
     }
+
+    function selectLocation(city) {
+        currentLocation = city; 
+        
+        // Ubah teks di Navbar Desktop & Mobile
+        if(document.getElementById('desktopLocText')) document.getElementById('desktopLocText').innerText = city;
+        if(document.getElementById('mobileLocText')) document.getElementById('mobileLocText').innerText = city;
+        
+        // Baris ini ditambahkan agar teks di Hero Search Bar ikut berubah
+        if(document.getElementById('heroLocText')) document.getElementById('heroLocText').innerText = city;
+        
+        toggleLocationModal();
+    }
+    function openComingSoon(title) {
+          document.getElementById('comingSoonTitle').innerText = title;
+          const modal = document.getElementById('comingSoonModal');
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+      }
+
+      function closeComingSoon() {
+          const modal = document.getElementById('comingSoonModal');
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+      }
       </script>
       
 </body>

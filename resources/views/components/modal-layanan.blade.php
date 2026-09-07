@@ -4,39 +4,39 @@
     <!-- Latar Belakang Gelap (Backdrop) -->
     <div id="modalBackdrop" class="fixed inset-0 bg-[#0b2046]/40 backdrop-blur-sm transition-opacity duration-300 opacity-0" onclick="closeModal()"></div>
 
-    <!-- Container untuk mengatur posisi ke tengah (Desktop) atau bawah (Mobile) -->
+    <!-- Container untuk mengatur posisi ke tengah layar -->
     <div class="fixed inset-0 z-10 w-screen overflow-y-auto pointer-events-none">
-        <div class="flex min-h-full items-end justify-center sm:items-center sm:p-4">
+        <div class="flex min-h-full items-center justify-center p-4">
             
-            <!-- Kotak Modal -->
-            <div id="modalPanel" class="pointer-events-auto relative flex flex-col w-full max-h-[90vh] sm:w-[500px] transform overflow-hidden rounded-t-3xl bg-white text-left shadow-2xl transition-all duration-300 sm:rounded-3xl opacity-0 translate-y-full sm:translate-y-0 sm:scale-95">
+            <!-- Kotak Modal (Diperkecil max-w-[340px] untuk mobile, max-h-[85vh] agar tidak mentok atas bawah) -->
+            <div id="modalPanel" class="pointer-events-auto relative flex flex-col w-full max-w-[340px] max-h-[85vh] sm:max-w-[450px] transform overflow-hidden rounded-[24px] bg-white text-left shadow-2xl transition-all duration-300 sm:rounded-[32px] opacity-0 scale-95">
                 
-                <!-- Header Modal (shrink-0 agar tidak ikut mengecil) -->
-                <div class="flex items-start justify-between p-6 pb-4 border-b border-[#e2e8f0] shrink-0">
+                <!-- Header Modal -->
+                <div class="flex items-start justify-between p-5 pb-4 border-b border-[#e2e8f0] shrink-0">
                     <div>
-                        <h3 id="modalTitle" class="font-display text-lg font-bold text-[#0b2046]">Nama Layanan</h3>
-                        <p id="modalDesc" class="mt-1 text-sm text-[#64748b]">Deskripsi layanan</p>
+                        <h3 id="modalTitle" class="font-display text-[17px] sm:text-lg font-bold text-[#0b2046]">Nama Layanan</h3>
+                        <p id="modalDesc" class="mt-0.5 text-[12px] sm:text-sm text-[#64748b]">Deskripsi layanan</p>
                     </div>
-                    <button type="button" onclick="closeModal()" class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f8fafc] text-[#0b2046] transition hover:bg-[#e2e8f0]">
-                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                    <button type="button" onclick="closeModal()" class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#f8fafc] text-[#0b2046] transition hover:bg-[#e2e8f0]">
+                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
                     </button>
                 </div>
 
                 <!-- Form Container -->
-                <!-- Aksi URL akan diubah secara dinamis oleh JavaScript -->
                 <form action="/pembayaran" method="GET" id="dynamicForm" class="flex flex-col flex-1 overflow-hidden" onsubmit="handleFormSubmit(event)">
                     <input type="hidden" id="serviceTypeInput" name="service_type" value="">
                     
                     <!-- Area Input yang bisa di-scroll -->
-                    <div class="flex-1 overflow-y-auto p-6">
-                        <div id="formFieldsContainer" class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <div class="flex-1 overflow-y-auto p-5 no-scrollbar">
+                        <!-- Jarak antar input dirapatkan menjadi gap-3 -->
+                        <div id="formFieldsContainer" class="grid grid-cols-1 gap-3 sm:grid-cols-2">
                             <!-- Fields disuntikkan di sini via JS -->
                         </div>
                     </div>
 
-                    <!-- Footer / Tombol Submit (Sticky di Bawah) -->
-                    <div class="shrink-0 border-t border-[#e2e8f0] bg-white p-6">
-                        <button type="submit" id="submitBtn" class="w-full rounded-full bg-[#E5B044] px-6 py-3.5 text-sm font-bold text-[#0b2046] transition hover:opacity-90">
+                    <!-- Footer / Tombol Submit -->
+                    <div class="shrink-0 border-t border-[#e2e8f0] bg-white p-5">
+                        <button type="submit" id="submitBtn" class="w-full rounded-full bg-[#E5B044] px-6 py-3 text-[13px] sm:text-sm font-bold text-[#0b2046] transition hover:scale-105 hover:bg-[#F1C86D]">
                             Pesan Sekarang
                         </button>
                     </div>
@@ -48,7 +48,6 @@
 </div>
 
 <script>
-    // Menyimpan konfigurasi layanan yang sedang dibuka
     let currentServiceConfig = null;
     let currentServiceName = "";
 
@@ -146,12 +145,12 @@
             ]
         },
 
-        // --- 3 LAYANAN DUKUNGAN (TIDAK BERBAYAR & TIDAK KE HALAMAN PEMBAYARAN) ---
+        // --- 3 LAYANAN DUKUNGAN ---
         'Lapor Masalah': {
             price: 0, 
             desc: "Laporkan kendala di kos atau aplikasi",
             btnText: "Kirim Laporan",
-            actionUrl: "non_transactional", // Menandakan bahwa ini tidak perlu ke halaman bayar
+            actionUrl: "non_transactional",
             successMessage: "Laporan berhasil dikirim! Tim kami akan segera memprosesnya.",
             fields: [
                 { name: "nama", label: "Nama Lengkap", required: true, half: true },
@@ -202,14 +201,13 @@
         document.getElementById('serviceTypeInput').value = serviceName;
         
         const form = document.getElementById('dynamicForm');
-        // Jika form adalah transaksional, arahkan ke URL pembayaran. Jika tidak, hapus action-nya.
         if (currentServiceConfig.actionUrl !== "non_transactional") {
             form.action = currentServiceConfig.actionUrl;
         } else {
             form.removeAttribute('action');
         }
         
-        // Logika Tombol Cerdas
+        // Logika Tombol
         const btn = document.getElementById('submitBtn');
         if (currentServiceConfig.price > 0) {
             const formattedPrice = new Intl.NumberFormat('id-ID').format(currentServiceConfig.price);
@@ -218,18 +216,21 @@
             btn.innerText = currentServiceConfig.btnText || 'Kirim';
         }
 
-        // 2. Render Form Fields
+        // 2. Render Form Fields (Diperkecil ukurannya)
         const container = document.getElementById('formFieldsContainer');
         let htmlContent = '';
-        const inputBaseClass = "w-full rounded-xl border border-[#e2e8f0] bg-white px-4 py-3 text-sm text-[#1e293b] outline-none transition placeholder:text-[#64748b] focus:border-[#0b2046] focus:ring-4 focus:ring-[#0b2046]/10";
+        
+        // Class input diperkecil: text-[13px], py-2.5, px-3.5, rounded-[14px]
+        const inputBaseClass = "w-full rounded-[14px] border border-[#e2e8f0] bg-white px-3.5 py-2.5 text-[13px] text-[#1e293b] outline-none transition placeholder:text-[#94a3b8] focus:border-[#0b2046] focus:ring-4 focus:ring-[#0b2046]/10";
 
         currentServiceConfig.fields.forEach(field => {
             const colSpan = field.half ? 'sm:col-span-1' : 'sm:col-span-2';
             const isRequired = field.required ? '<span class="text-[#E5B044]">*</span>' : '';
             const requiredAttr = field.required ? 'required' : '';
             
+            // Label diperkecil jadi text-[12px]
             htmlContent += `<div class="${colSpan}">
-                <label class="mb-1.5 block text-xs font-semibold text-[#0b2046]">${field.label} ${isRequired}</label>`;
+                <label class="mb-1.5 block text-[12px] font-semibold text-[#0b2046]">${field.label} ${isRequired}</label>`;
 
             if (field.type === 'textarea') {
                 htmlContent += `<textarea rows="3" name="${field.name}" class="${inputBaseClass} resize-none" ${requiredAttr}></textarea>`;
@@ -239,7 +240,7 @@
                 if(field.options) field.options.forEach(opt => htmlContent += `<option value="${opt}">${opt}</option>`);
                 htmlContent += `</select>`;
             } else if (field.type === 'file') {
-                htmlContent += `<label class="flex cursor-pointer items-center gap-2 rounded-xl border border-dashed border-[#e2e8f0] px-4 py-3 text-sm text-[#64748b] transition hover:border-[#0b2046]">
+                htmlContent += `<label class="flex cursor-pointer items-center gap-2 rounded-[14px] border border-dashed border-[#e2e8f0] px-3.5 py-2.5 text-[13px] text-[#64748b] transition hover:border-[#0b2046]">
                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
                     Unggah lampiran<input type="file" name="${field.name}" class="hidden" ${requiredAttr} />
                 </label>`;
@@ -255,36 +256,30 @@
         setTimeout(() => {
             backdrop.classList.remove('opacity-0');
             backdrop.classList.add('opacity-100');
-            panel.classList.remove('opacity-0', 'translate-y-full', 'sm:scale-95');
-            panel.classList.add('opacity-100', 'translate-y-0', 'sm:scale-100');
+            panel.classList.remove('opacity-0', 'scale-95');
+            panel.classList.add('opacity-100', 'scale-100');
         }, 10);
     }
     
     function closeModal() {
         backdrop.classList.remove('opacity-100');
         backdrop.classList.add('opacity-0');
-        panel.classList.remove('opacity-100', 'translate-y-0', 'sm:scale-100');
-        panel.classList.add('opacity-0', 'translate-y-full', 'sm:scale-95');
+        panel.classList.remove('opacity-100', 'scale-100');
+        panel.classList.add('opacity-0', 'scale-95');
         setTimeout(() => { modal.classList.add('hidden'); }, 300);
     }
 
-    // 4. Logika Handle Submit Khusus Layanan Dukungan
+    // 4. Logika Handle Submit
     function handleFormSubmit(event) {
-        // Jika layanan yang sedang dibuka adalah tipe non-transaksional (Lapor Masalah dll)
         if (currentServiceConfig && currentServiceConfig.actionUrl === "non_transactional") {
-            // Cegah form berpindah halaman!
             event.preventDefault();
-            
-            // Tutup modal
             closeModal();
             
-            // Tampilkan Notifikasi Toast (Memastikan fungsi showToast dari layout utama dipanggil)
             if (typeof showToast === "function") {
                 showToast(currentServiceConfig.successMessage);
             } else {
-                alert(currentServiceConfig.successMessage); // Fallback jika fungsi toast gagal
+                alert(currentServiceConfig.successMessage); 
             }
         }
-        // Jika transaksional, biarkan event submit normal berjalan (berpindah ke halaman /pembayaran)
     }
 </script>

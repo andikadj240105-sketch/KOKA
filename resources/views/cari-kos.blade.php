@@ -11,7 +11,8 @@
     
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-white font-sans text-ink antialiased overflow-y-scroll">
+<!-- pb-24 agar konten paling bawah tidak tertutup sticky bar di mobile -->
+<body class="bg-white font-sans text-ink antialiased overflow-y-scroll pb-24 lg:pb-0">
 
   <!-- Komponen Header -->
   <x-navbar />
@@ -48,12 +49,13 @@
     <div class="grid gap-8 lg:grid-cols-[280px_1fr]">
       
       <!-- DESKTOP SIDEBAR (FILTER) -->
-      <aside class="hidden self-start rounded-[24px] border border-[#e2e8f0] bg-white p-6 shadow-sm lg:block">
+      <!-- Di Mobile elemen ini di-hide (hidden), di Desktop dimunculkan (lg:block) -->
+     <aside class="self-start rounded-[24px] border border-[#e2e8f0] bg-white p-6 shadow-sm">
         <div class="space-y-8">
           
           <!-- Filter: Lokasi -->
           <div>
-            <h4 class="mb-3 font-display text-[14px] font-bold text-[#0b2046]">Lokasi</h4>
+            <h4 class="mb-3 font-display text-[14px] font-bold text-[#0b2046]"> Cari Lokasi Sekitaran Kampus</h4>
             <button class="flex w-full items-center justify-between rounded-[12px] border border-[#e2e8f0] px-4 py-3 text-[14px] font-medium text-[#0b2046] transition hover:border-[#0b2046]">
               Bandung 
               <svg class="h-4 w-4 text-[#64748b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
@@ -248,10 +250,15 @@
               </div>
             </div>
           </a>
+        </div>
+      </div>
+
+    </div>
 
     <!-- MOBILE STICKY FILTER BOTTOM BAR -->
     <div class="fixed inset-x-0 bottom-0 z-30 flex gap-3 border-t border-[#e2e8f0] bg-white/95 px-4 py-4 backdrop-blur lg:hidden shadow-[0_-10px_20px_-10px_rgba(0,0,0,0.05)]">
-      <button class="flex flex-1 items-center justify-center gap-2 rounded-[16px] border border-[#e2e8f0] bg-white px-4 py-3.5 text-[14px] font-bold text-[#0b2046] shadow-sm">
+      <!-- PERBAIKAN: Menambahkan onclick="openMobileFilter()" -->
+      <button onclick="openMobileFilter()" class="flex flex-1 items-center justify-center gap-2 rounded-[16px] border border-[#e2e8f0] bg-white px-4 py-3.5 text-[14px] font-bold text-[#0b2046] shadow-sm active:bg-gray-50 transition">
         <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg> 
         Filter
       </button>
@@ -266,6 +273,128 @@
   </main>
 
   <x-footer />
+
+  <!-- ================= MOBILE FILTER MODAL (BOTTOM SHEET) ================= -->
+  <!-- Komponen ini akan meluncur dari bawah saat tombol Filter di HP ditekan -->
+  <div id="mobileFilterModal" class="fixed inset-0 z-[100] hidden items-end justify-center transition-opacity lg:hidden">
+    
+    <!-- Backdrop Gelap -->
+    <div id="mobileFilterBackdrop" class="absolute inset-0 bg-[#0b2046]/40 backdrop-blur-sm opacity-0 transition-opacity duration-300" onclick="closeMobileFilter()"></div>
+    
+    <!-- Kotak Bottom Sheet -->
+    <div id="mobileFilterPanel" class="relative flex w-full max-h-[90vh] flex-col overflow-hidden rounded-t-[32px] bg-white shadow-2xl transition-transform duration-300 translate-y-full">
+      
+      <!-- Garis Tarik (Handle) -->
+      <div class="mx-auto mt-3 h-1.5 w-12 shrink-0 rounded-full bg-[#e2e8f0]"></div>
+      
+      <!-- Header -->
+      <div class="flex shrink-0 items-center justify-between border-b border-[#e2e8f0] px-6 py-4">
+        <h3 class="font-display text-[18px] font-bold text-[#0b2046]">Filter Kos</h3>
+        <button onclick="closeMobileFilter()" aria-label="Tutup" class="grid h-8 w-8 place-items-center rounded-full bg-[#f8fafc] text-[#0b2046] transition hover:bg-[#e2e8f0]">
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+      </div>
+
+      <!-- Konten Filter (Bisa di-scroll) -->
+      <div class="flex-1 overflow-y-auto px-6 py-5">
+        <div class="space-y-8 pb-4">
+          
+          <!-- Duplikat Filter: Lokasi -->
+          <div>
+            <h4 class="mb-3 font-display text-[14px] font-bold text-[#0b2046]">Lokasi</h4>
+            <button class="flex w-full items-center justify-between rounded-[12px] border border-[#e2e8f0] px-4 py-3 text-[14px] font-medium text-[#0b2046]">
+              Bandung <svg class="h-4 w-4 text-[#64748b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+            </button>
+          </div>
+
+          <!-- Duplikat Filter: Harga -->
+          <div>
+            <h4 class="mb-3 font-display text-[14px] font-bold text-[#0b2046]">Harga maksimal / tahun</h4>
+            <input type="range" min="8000000" max="20000000" step="500000" class="w-full accent-[#E5B044]" />
+            <div class="mt-2 text-[14px] font-bold text-[#0b2046]">Rp 20.000.000</div>
+          </div>
+
+          <!-- Duplikat Filter: Tipe Kos -->
+          <div>
+            <h4 class="mb-3 font-display text-[14px] font-bold text-[#0b2046]">Tipe Kos</h4>
+            <div class="flex flex-wrap gap-2.5">
+              <button class="rounded-full bg-[#0b2046] px-4 py-2 text-[12px] font-bold text-white">Kosan Kampus</button>
+              <button class="rounded-full border border-[#e2e8f0] px-4 py-2 text-[12px] font-medium text-[#64748b]">Eksklusif</button>
+              <button class="rounded-full border border-[#e2e8f0] px-4 py-2 text-[12px] font-medium text-[#64748b]">Ekonomis</button>
+            </div>
+          </div>
+
+          <!-- Duplikat Filter: Gender -->
+          <div>
+            <h4 class="mb-3 font-display text-[14px] font-bold text-[#0b2046]">Gender</h4>
+            <div class="flex flex-wrap gap-2.5">
+              <button class="rounded-full bg-[#0b2046] px-4 py-2 text-[12px] font-bold text-white">Semua</button>
+              <button class="rounded-full border border-[#e2e8f0] px-4 py-2 text-[12px] font-medium text-[#64748b]">Putra</button>
+              <button class="rounded-full border border-[#e2e8f0] px-4 py-2 text-[12px] font-medium text-[#64748b]">Putri</button>
+              <button class="rounded-full border border-[#e2e8f0] px-4 py-2 text-[12px] font-medium text-[#64748b]">Campur</button>
+            </div>
+          </div>
+
+          <!-- Duplikat Filter: Fasilitas -->
+          <div>
+            <h4 class="mb-3 font-display text-[14px] font-bold text-[#0b2046]">Fasilitas</h4>
+            <div class="space-y-3.5">
+              <label class="flex cursor-pointer items-center gap-3 text-[14px] font-medium text-[#1e293b]"><input type="checkbox" class="h-4.5 w-4.5 rounded border-[#e2e8f0] accent-[#0b2046]" /> Furnished</label>
+              <label class="flex cursor-pointer items-center gap-3 text-[14px] font-medium text-[#1e293b]"><input type="checkbox" checked class="h-4.5 w-4.5 rounded border-[#e2e8f0] accent-[#0b2046]" /> AC</label>
+              <label class="flex cursor-pointer items-center gap-3 text-[14px] font-medium text-[#1e293b]"><input type="checkbox" checked class="h-4.5 w-4.5 rounded border-[#e2e8f0] accent-[#0b2046]" /> WiFi</label>
+              <label class="flex cursor-pointer items-center gap-3 text-[14px] font-medium text-[#1e293b]"><input type="checkbox" class="h-4.5 w-4.5 rounded border-[#e2e8f0] accent-[#0b2046]" /> Kamar Mandi Dalam</label>
+              <label class="flex cursor-pointer items-center gap-3 text-[14px] font-medium text-[#1e293b]"><input type="checkbox" class="h-4.5 w-4.5 rounded border-[#e2e8f0] accent-[#0b2046]" /> Parkir</label>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+      <!-- Footer Tombol Sticky -->
+      <div class="shrink-0 grid grid-cols-2 gap-3 border-t border-[#e2e8f0] p-6 pb-8">
+        <button class="rounded-[14px] border border-[#e2e8f0] px-4 py-3.5 text-[14px] font-bold text-[#0b2046] transition active:bg-gray-50">Reset</button>
+        <button onclick="closeMobileFilter()" class="rounded-[14px] bg-[#0b2046] px-4 py-3.5 text-[14px] font-bold text-white transition hover:opacity-90">Terapkan</button>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- SCRIPT LOGIKA BUKA TUTUP MODAL -->
+  <script>
+      function openMobileFilter() {
+          const modal = document.getElementById('mobileFilterModal');
+          const backdrop = document.getElementById('mobileFilterBackdrop');
+          const panel = document.getElementById('mobileFilterPanel');
+          
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          
+          // Animasi Muncul
+          setTimeout(() => {
+              backdrop.classList.remove('opacity-0');
+              backdrop.classList.add('opacity-100');
+              panel.classList.remove('translate-y-full');
+              panel.classList.add('translate-y-0');
+          }, 10);
+      }
+
+      function closeMobileFilter() {
+          const modal = document.getElementById('mobileFilterModal');
+          const backdrop = document.getElementById('mobileFilterBackdrop');
+          const panel = document.getElementById('mobileFilterPanel');
+          
+          // Animasi Turun
+          backdrop.classList.remove('opacity-100');
+          backdrop.classList.add('opacity-0');
+          panel.classList.remove('translate-y-0');
+          panel.classList.add('translate-y-full');
+          
+          setTimeout(() => {
+              modal.classList.add('hidden');
+              modal.classList.remove('flex');
+          }, 300);
+      }
+  </script>
 
 </body>
 </html>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 // Rute untuk Beranda
 Route::get('/', function () {
@@ -57,3 +58,53 @@ Route::get('/promo', function () {
 });
 Route::get('/rewards', function () { return view('rewards'); });
 Route::get('/kokacare', function () { return view('kokacare'); });
+
+Route::get('/admin/login', [AdminController::class, 'showLogin'])->name('admin.login');
+Route::post('/admin/login', [AdminController::class, 'login']);
+
+// Rute untuk Dashboard Admin
+Route::get('/admin', [AdminController::class, 'dashboard']);
+
+Route::get('/admin/pengguna', function () {
+    return view('admin.pengguna');
+});
+
+Route::get('/admin/pemilik', function () {
+    return view('admin.pemilik');
+});
+
+Route::get('/admin/kos', function () {
+    return view('admin.kos');
+});
+
+Route::get('/admin/layanan', function () {
+    return view('admin.layanan');
+});
+
+Route::get('/admin/notifikasi', function () {
+    return view('admin.notifikasi');
+});
+
+Route::get('/admin/booking', function () {
+    return view('admin.booking');
+});
+
+Route::get('/admin/pembayaran', function () {
+    return view('admin.pembayaran');
+});
+
+Route::get('/admin/driver', function () {
+    return view('admin.driver');
+});
+
+Route::get('/admin/promo', function () {
+    return view('admin.promo');
+});
+
+Route::get('/admin/laporan', function () {
+    return view('admin.laporan');
+});
+
+Route::get('/admin/pengaturan', function () {
+    return view('admin.pengaturan');
+});
