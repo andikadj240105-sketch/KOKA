@@ -10,7 +10,7 @@
       <h1 class="font-display text-2xl font-semibold tracking-tight text-slate-900">Pusat Notifikasi</h1>
       <p class="mt-1 text-sm text-slate-500">Aktivitas terbaru di seluruh platform.</p>
     </div>
-    <button @click="markAll()" class="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50">
+    <button @click="markAll()" class="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50 cursor-pointer">
       <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
       Tandai semua dibaca
     </button>
@@ -21,7 +21,7 @@
     <template x-for="c in cats" :key="c">
       <button @click="cat = c" 
         :class="cat === c ? 'border-[#0b2046] bg-[#0b2046] text-white' : 'border-slate-200 bg-white text-slate-500 hover:border-[#0b2046]/40'"
-        class="rounded-full border px-3.5 py-1.5 text-sm font-medium transition" x-text="c">
+        class="rounded-full border px-3.5 py-1.5 text-sm font-medium transition cursor-pointer" x-text="c">
       </button>
     </template>
   </div>
@@ -30,25 +30,30 @@
   <div class="rounded-2xl border border-slate-200 bg-white shadow-sm divide-y divide-slate-200 overflow-hidden">
     
     <template x-for="n in filteredItems" :key="n.id">
-      <button @click="markAsRead(n.id)" 
-        :class="!n.read ? 'bg-blue-50/40' : 'hover:bg-slate-50'"
-        class="flex w-full items-start gap-4 p-5 text-left transition focus:outline-none">
+      <div class="relative group flex w-full items-start gap-4 p-5 text-left transition" :class="!n.read ? 'bg-blue-50/40' : 'hover:bg-slate-50'">
         
-        <!-- Ikon -->
-        <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-blue-50 text-[#0b2046]" x-html="getIcon(n.icon)"></span>
-        
-        <div class="min-w-0 flex-1">
-          <div class="flex items-center gap-2">
-            <p class="font-medium text-slate-900" x-text="n.judul"></p>
-            <!-- Indikator Belum Dibaca -->
-            <template x-if="!n.read">
-              <span class="h-2 w-2 rounded-full bg-[#0b2046]"></span>
-            </template>
-          </div>
-          <p class="text-sm text-slate-500 mt-0.5" x-text="n.desc"></p>
-          <p class="mt-1.5 text-xs text-slate-400"><span x-text="n.waktu"></span> · <span x-text="n.kategori"></span></p>
+        <!-- Area Klik untuk Membaca -->
+        <div @click="markAsRead(n.id)" class="flex flex-1 items-start gap-4 cursor-pointer">
+            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-blue-50 text-[#0b2046]" x-html="getIcon(n.icon)"></span>
+            
+            <div class="min-w-0 flex-1 pr-8">
+              <div class="flex items-center gap-2">
+                <p class="font-medium text-slate-900" x-text="n.judul"></p>
+                <template x-if="!n.read">
+                  <span class="h-2 w-2 rounded-full bg-[#0b2046]"></span>
+                </template>
+              </div>
+              <p class="text-sm text-slate-500 mt-0.5" x-text="n.desc"></p>
+              <p class="mt-1.5 text-xs text-slate-400"><span x-text="n.waktu"></span> · <span x-text="n.kategori"></span></p>
+            </div>
         </div>
-      </button>
+
+        <!-- Tombol Hapus Real-time -->
+        <button @click.stop="deleteNotif(n.id)" class="absolute right-4 top-5 opacity-0 group-hover:opacity-100 p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-opacity cursor-pointer" title="Hapus Notifikasi">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+        </button>
+        
+      </div>
     </template>
 
     <!-- Empty State -->
@@ -67,27 +72,71 @@
       cat: 'Semua',
       cats: ["Semua", "Booking baru", "Pembayaran", "Pemilik baru", "Kos baru", "Driver baru", "Laporan pengguna"],
       
-      // Dummy Data Notifikasi
-      items: [
-        { id: 1, judul: 'Booking Baru: Kos Melati', desc: 'Siti Rahma telah membuat booking baru untuk Kos Melati Residence.', waktu: '5 menit yang lalu', kategori: 'Booking baru', icon: 'CalendarCheck', read: false },
-        { id: 2, judul: 'Pembayaran Berhasil', desc: 'Pembayaran sebesar Rp 1.500.000 dari Andika Dwi telah terkonfirmasi (QRIS).', waktu: '30 menit yang lalu', kategori: 'Pembayaran', icon: 'CreditCard', read: false },
-        { id: 3, judul: 'Pemilik Kos Baru Mendaftar', desc: 'Budi Hartono telah mendaftar sebagai pemilik kos dan menunggu verifikasi dokumen.', waktu: '2 jam yang lalu', kategori: 'Pemilik baru', icon: 'UserPlus', read: true },
-        { id: 4, judul: 'Listing Kos Baru', desc: 'Wisma Asri Jaya (Jakarta) telah ditambahkan dan menunggu approval.', waktu: '5 jam yang lalu', kategori: 'Kos baru', icon: 'Building2', read: true },
-        { id: 5, judul: 'Order Layanan Kosan Ride', desc: 'Order layanan Kosan Ride #ORD-991 sedang berlangsung.', waktu: '1 hari yang lalu', kategori: 'Laporan pengguna', icon: 'Bike', read: true },
-        { id: 6, judul: 'Laporan Pengguna', desc: 'Terdapat laporan terkait fasilitas Kos Eksklusif Senayan.', waktu: '2 hari yang lalu', kategori: 'Laporan pengguna', icon: 'Flag', read: true },
-      ],
+      items: {!! isset($notifikasis) ? json_encode($notifikasis->map(function($n) {
+          return [
+              'id' => $n->id,
+              'judul' => $n->judul,
+              'desc' => $n->pesan,
+              'waktu' => $n->created_at->diffForHumans(),
+              'kategori' => 'Semua',
+              'icon' => $n->ikon ?? 'CalendarCheck',
+              'read' => (bool) $n->is_read
+          ];
+      })) : '[]' !!},
 
       get filteredItems() {
         return this.items.filter(n => this.cat === 'Semua' || n.kategori === this.cat);
       },
 
       markAll() {
-        this.items.forEach(n => n.read = true);
+        this.items.forEach(n => {
+            if (!n.read) this.markAsRead(n.id);
+        });
       },
 
+     // Menumpang ke jalur User juga
       markAsRead(id) {
         const item = this.items.find(n => n.id === id);
-        if (item) item.read = true;
+        if (item && !item.read) {
+            item.read = true;
+            
+            fetch(`/notifikasi/${id}/read`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Content-Type': 'application/json'
+                }
+            }).catch(error => console.error('Gagal memperbarui notifikasi:', error));
+        }
+      },
+
+      deleteNotif(id) {
+          // KUNCI UTAMA: URL diarahkan ke /notifikasi/... (MENGGUNAKAN JALUR USER)
+          fetch(`/notifikasi/${id}/hapus`, {
+              method: 'POST', 
+              headers: {
+                  'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                  'X-Requested-With': 'XMLHttpRequest',
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+              }
+          })
+          .then(res => {
+              if (!res.ok) throw new Error('Rute tidak ditemukan');
+              return res.json();
+          })
+          .then(data => {
+              if (data.success) {
+                  // Hapus elemen dari layar jika sukses di database
+                  this.items = this.items.filter(n => n.id !== id);
+              } else {
+                  alert('Gagal dihapus: ' + data.message);
+              }
+          })
+          .catch(error => {
+              console.error('Gagal menghapus notifikasi:', error);
+              alert('Gagal menghubungi server.');
+          });
       },
 
       getIcon(iconName) {

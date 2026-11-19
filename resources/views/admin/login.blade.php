@@ -112,9 +112,7 @@
             </button>
           </form>
 
-          <p class="mt-6 text-center text-xs text-slate-400">
-            Demo: <span class="font-medium text-slate-700">admin@kosan.id</span> / <span class="font-medium text-slate-700">admin123</span>
-          </p>
+          
         </div>
       </div>
 

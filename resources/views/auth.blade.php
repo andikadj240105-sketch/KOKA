@@ -1,3 +1,4 @@
+<!-- resources/views/auth.blade.php -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -10,15 +11,15 @@
 
   <main class="mx-auto flex max-w-[1280px] items-center px-4 py-8 sm:px-6 lg:min-h-[calc(100vh-72px)]">
     
-    <div class="grid w-full overflow-hidden rounded-[28px] border border-line bg-white shadow-[0_30px_80px_-40px_rgba(11,42,85,0.45)] lg:grid-cols-2">
+    <div class="grid w-full overflow-hidden rounded-[28px] border border-line bg-white shadow-[0_30px_80px_-40px_rgba(82,43,137,0.45)] lg:grid-cols-2">
       
       <!-- ================= BRAND PANEL ================= -->
-      <div class="relative hidden flex-col justify-between overflow-hidden bg-navy p-10 lg:flex">
-        <div class="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-gold/15 blur-3xl"></div>
+      <div class="relative hidden flex-col justify-between overflow-hidden bg-[#522b89] p-10 lg:flex">
+        <div class="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-[#F39C12]/15 blur-3xl"></div>
         <div class="pointer-events-none absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-white/5 blur-2xl"></div>
         
         <div class="relative">
-          <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold text-gold">
+          <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold text-[#F39C12]">
             <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
             Student Living Platform
           </span>
@@ -30,19 +31,19 @@
           </p>
           <ul class="mt-8 space-y-3">
             <li class="flex items-center gap-3 text-sm text-white/80">
-              <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gold text-navy">
+              <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#F39C12] text-[#522b89]">
                 <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
               </span>
               Ribuan pilihan kos terverifikasi
             </li>
             <li class="flex items-center gap-3 text-sm text-white/80">
-              <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gold text-navy">
+              <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#F39C12] text-[#522b89]">
                 <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
               </span>
               Bayar sewa & kelola kontrak digital
             </li>
             <li class="flex items-center gap-3 text-sm text-white/80">
-              <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gold text-navy">
+              <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#F39C12] text-[#522b89]">
                 <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
               </span>
               Akses semua layanan KosanX + rewards
@@ -56,66 +57,108 @@
 
       <!-- ================= FORM PANEL ================= -->
       <div class="p-6 sm:p-10">
-        <a href="/" class="mb-6 inline-flex items-center gap-1.5 text-sm font-medium text-slate transition hover:text-navy">
+        <a href="/" class="mb-6 inline-flex items-center gap-1.5 text-sm font-medium text-slate transition hover:text-[#522b89]">
           <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
           Kembali
         </a>
 
         <!-- TABS (Masuk / Daftar) -->
         <div class="mb-7 inline-flex rounded-full bg-cloud p-1">
-          <button id="tabLogin" onclick="setMode('login')" class="rounded-full px-5 py-2 text-sm font-semibold transition bg-navy text-white shadow-sm">
+          <button type="button" id="tabLogin" onclick="setMode('login')" class="rounded-full px-5 py-2 text-sm font-semibold transition bg-[#522b89] text-white shadow-sm">
             Masuk
           </button>
-          <button id="tabRegister" onclick="setMode('register')" class="rounded-full px-5 py-2 text-sm font-semibold transition text-slate hover:text-navy">
+          <button type="button" id="tabRegister" onclick="setMode('register')" class="rounded-full px-5 py-2 text-sm font-semibold transition text-slate hover:text-[#522b89]">
             Daftar
           </button>
         </div>
 
-        <h1 id="formTitle" class="font-display text-2xl font-bold text-navy">Selamat datang kembali</h1>
+        <h1 id="formTitle" class="font-display text-2xl font-bold text-[#522b89]">Selamat datang kembali</h1>
         <p id="formSubtitle" class="mt-1 text-sm text-slate">Masuk untuk melanjutkan ke akun kamu.</p>
 
-        <!-- FORM -->
-        <form onsubmit="handleAuth(event)" class="mt-6 space-y-4">
+        @if($errors->any())
+          <div id="throttle-alert" class="mt-4 rounded-xl bg-red-50 p-3 text-sm text-red-600 font-medium">
+            {{ $errors->first() }}
+          </div>
+
+          @php
+              // Mendeteksi sisa detik dari pesan error secara otomatis
+              preg_match('/dalam\s+(\d+)\s+detik/', $errors->first(),$matches);
+              $secondsLeft =$matches[1] ?? 0;
+          @endphp
+
+          @if($secondsLeft > 0)
+          <script>
+              document.addEventListener("DOMContentLoaded", function() {
+                  let timeLeft = {{ $secondsLeft }};
+                  const alertBox = document.getElementById('throttle-alert');
+                  const btnSubmit = document.getElementById('btnSubmitAuth');
+                  
+                  // Nonaktifkan tombol login sementara cooldown berjalan
+                  if(btnSubmit) {
+                      btnSubmit.disabled = true;
+                      btnSubmit.classList.add('opacity-50', 'cursor-not-allowed');
+                  }
+
+                  const timer = setInterval(function() {
+                      timeLeft--;
+                      if (timeLeft > 0) {
+                          alertBox.innerText = `Terlalu banyak percobaan masuk. Silakan coba lagi dalam ${timeLeft} detik.`;
+                      } else {
+                          clearInterval(timer);
+                          alertBox.style.display = 'none';
+                          // Aktifkan kembali tombol submit ketika waktu habis
+                          if(btnSubmit) {
+                              btnSubmit.disabled = false;
+                              btnSubmit.classList.remove('opacity-50', 'cursor-not-allowed');
+                          }
+                      }
+                  }, 1000);
+              });
+          </script>
+          @endif
+        @endif
+
+        <!-- FORM AUTH -->
+        <form id="authForm" action="{{ route('auth.login') }}" method="POST" class="mt-6 space-y-4">
+          @csrf
           
           <!-- Area Khusus Register (Nama Lengkap) -->
           <div id="registerFieldNama" class="hidden">
-            <label class="mb-1.5 block text-xs font-semibold text-navy">Nama Lengkap</label>
-            <div class="flex items-center gap-2.5 rounded-xl border border-line bg-white px-3.5 transition focus-within:border-navy focus-within:ring-4 focus-within:ring-navy/10">
+            <label class="mb-1.5 block text-xs font-semibold text-[#522b89]">Nama Lengkap</label>
+            <div class="flex items-center gap-2.5 rounded-xl border border-line bg-white px-3.5 transition focus-within:border-[#522b89] focus-within:ring-4 focus-within:ring-[#522b89]/10">
               <svg class="h-[18px] w-[18px] shrink-0 text-slate" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
-              <input type="text" id="inputNama" placeholder="Nama kamu" class="w-full bg-transparent py-3 text-sm text-ink outline-none placeholder:text-slate" />
+              <input type="text" id="inputNama" name="nama" placeholder="Nama kamu" class="w-full bg-transparent py-3 text-sm text-ink outline-none placeholder:text-slate" disabled />
             </div>
           </div>
 
           <!-- Email (Selalu Muncul) -->
           <div>
-            <label class="mb-1.5 block text-xs font-semibold text-navy">Email</label>
-            <div class="flex items-center gap-2.5 rounded-xl border border-line bg-white px-3.5 transition focus-within:border-navy focus-within:ring-4 focus-within:ring-navy/10">
+            <label class="mb-1.5 block text-xs font-semibold text-[#522b89]">Email</label>
+            <div class="flex items-center gap-2.5 rounded-xl border border-line bg-white px-3.5 transition focus-within:border-[#522b89] focus-within:ring-4 focus-within:ring-[#522b89]/10">
               <svg class="h-[18px] w-[18px] shrink-0 text-slate" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-              <input type="email" id="inputEmail" required placeholder="nama@email.com" class="w-full bg-transparent py-3 text-sm text-ink outline-none placeholder:text-slate" />
+              <input type="email" id="inputEmail" name="email" required placeholder="nama@email.com" class="w-full bg-transparent py-3 text-sm text-ink outline-none placeholder:text-slate" />
             </div>
           </div>
 
           <!-- Area Khusus Register (Nomor HP) -->
           <div id="registerFieldHp" class="hidden">
-            <label class="mb-1.5 block text-xs font-semibold text-navy">Nomor HP</label>
-            <div class="flex items-center gap-2.5 rounded-xl border border-line bg-white px-3.5 transition focus-within:border-navy focus-within:ring-4 focus-within:ring-navy/10">
+            <label class="mb-1.5 block text-xs font-semibold text-[#522b89]">Nomor HP</label>
+            <div class="flex items-center gap-2.5 rounded-xl border border-line bg-white px-3.5 transition focus-within:border-[#522b89] focus-within:ring-4 focus-within:ring-[#522b89]/10">
               <svg class="h-[18px] w-[18px] shrink-0 text-slate" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-              <input type="tel" id="inputHp" placeholder="08xxxxxxxxxx" class="w-full bg-transparent py-3 text-sm text-ink outline-none placeholder:text-slate" />
+              <input type="tel" id="inputHp" name="hp" placeholder="08xxxxxxxxxx" class="w-full bg-transparent py-3 text-sm text-ink outline-none placeholder:text-slate" disabled />
             </div>
           </div>
 
           <!-- Password (Selalu Muncul) -->
           <div>
-            <label class="mb-1.5 block text-xs font-semibold text-navy">Kata Sandi</label>
-            <div class="flex items-center gap-2.5 rounded-xl border border-line bg-white px-3.5 transition focus-within:border-navy focus-within:ring-4 focus-within:ring-navy/10">
+            <label class="mb-1.5 block text-xs font-semibold text-[#522b89]">Kata Sandi</label>
+            <div class="flex items-center gap-2.5 rounded-xl border border-line bg-white px-3.5 transition focus-within:border-[#522b89] focus-within:ring-4 focus-within:ring-[#522b89]/10">
               <svg class="h-[18px] w-[18px] shrink-0 text-slate" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-              <input type="password" id="inputPassword" required placeholder="Masukkan kata sandi" class="w-full bg-transparent py-3 text-sm text-ink outline-none placeholder:text-slate" />
+              <input type="password" id="inputPassword" name="password" required placeholder="Masukkan kata sandi" class="w-full bg-transparent py-3 text-sm text-ink outline-none placeholder:text-slate" />
               
               <!-- Tombol Intip Password -->
-              <button type="button" onclick="togglePassword()" class="text-slate transition hover:text-navy">
-                <!-- Ikon Mata Tertutup -->
+              <button type="button" onclick="togglePassword()" class="text-slate transition hover:text-[#522b89]">
                 <svg id="iconEyeClosed" class="h-[18px] w-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" /></svg>
-                <!-- Ikon Mata Terbuka -->
                 <svg id="iconEyeOpen" class="h-[18px] w-[18px] hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
               </button>
             </div>
@@ -124,24 +167,24 @@
           <!-- Ceklis Bawah -->
           <div id="loginExtras" class="flex items-center justify-between text-sm">
             <label class="flex cursor-pointer items-center gap-2 text-slate">
-              <input type="checkbox" class="h-4 w-4 rounded accent-[#0b2a55]" /> Ingat saya
+              <input type="checkbox" name="remember" class="h-4 w-4 rounded accent-[#522b89]" /> Ingat saya
             </label>
-            <button type="button" onclick="showToast('Tautan reset dikirim ke email')" class="font-semibold text-navy transition hover:text-gold">
+            <button type="button" onclick="showToast('Tautan reset dikirim ke email')" class="font-semibold text-[#522b89] transition hover:text-[#F39C12]">
               Lupa sandi?
             </button>
           </div>
 
           <div id="registerExtras" class="hidden text-sm">
             <label class="flex cursor-pointer items-start gap-2.5 text-sm text-slate">
-              <input type="checkbox" id="checkTerms" class="mt-0.5 h-4 w-4 rounded accent-[#0b2a55]" />
+              <input type="checkbox" id="checkTerms" class="mt-0.5 h-4 w-4 rounded accent-[#522b89]" />
               <span>
-                Saya setuju dengan <span class="font-semibold text-navy">Syarat & Ketentuan</span> dan <span class="font-semibold text-navy">Kebijakan Privasi</span> KOKA.
+                Saya setuju dengan <span class="font-semibold text-[#522b89]">Syarat & Ketentuan</span> dan <span class="font-semibold text-[#522b89]">Kebijakan Privasi</span> KOKA.
               </span>
             </label>
           </div>
 
-          <!-- Tombol Submit (Warna Navy seperti variant="navy") -->
-          <button type="submit" id="btnSubmitAuth" class="w-full rounded-xl bg-navy px-4 py-3 text-sm font-semibold text-white transition hover:bg-navy/90">
+          <!-- Tombol Submit -->
+          <button type="submit" id="btnSubmitAuth" class="w-full rounded-xl bg-[#522b89] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#522b89]/90">
             Masuk
           </button>
 
@@ -150,21 +193,21 @@
             <span class="h-px flex-1 bg-line"></span> atau <span class="h-px flex-1 bg-line"></span>
           </div>
 
-          <!-- Tombol Google (Warna Outline seperti variant="outline") -->
-          <button type="button" onclick="showToast('Mengalihkan ke Google...')" class="flex w-full items-center justify-center gap-3 rounded-xl border border-line bg-white px-4 py-3 text-sm font-semibold text-navy transition hover:bg-cloud">
-            <span class="font-display text-base font-bold text-gold">G</span>
-            Lanjutkan dengan Google
-          </button>
+          <!-- Tombol Google -->
+          <a href="{{ route('google.login') }}" class="flex w-full items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-[14px] font-bold text-[#522b89] shadow-sm transition hover:bg-slate-50">
+              <span class="text-[#F39C12] font-bold text-lg">G</span> 
+              Lanjutkan dengan Google
+          </a>
 
           <!-- Teks Bawah -->
           <p class="pt-1 text-center text-sm text-slate">
             <span id="bottomText">Belum punya akun? </span>
-            <button type="button" onclick="toggleMode()" id="bottomLink" class="font-semibold text-navy transition hover:text-gold">
+            <button type="button" onclick="toggleMode()" id="bottomLink" class="font-semibold text-[#522b89] transition hover:text-[#F39C12]">
               Daftar sekarang
             </button>
           </p>
           <p class="flex items-center justify-center gap-1.5 pt-1 text-center text-[11px] text-slate">
-            <svg class="h-3.5 w-3.5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+            <svg class="h-3.5 w-3.5 text-[#F39C12]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
             Data kamu aman & terenkripsi bersama KOKA.
           </p>
 
@@ -174,7 +217,6 @@
   </main>
 
   <script>
-    // 1. Baca URL parameter
     const urlParams = new URLSearchParams(window.location.search);
     let currentMode = urlParams.get('mode') === 'register' ? 'register' : 'login';
 
@@ -182,36 +224,41 @@
         setMode(currentMode);
     });
 
-    // 2. Fungsi Animasi Perpindahan Tab
     function setMode(mode) {
         currentMode = mode;
         const isLogin = mode === 'login';
         
         const tabLogin = document.getElementById('tabLogin');
         const tabRegister = document.getElementById('tabRegister');
+        const authForm = document.getElementById('authForm');
         
-        // Transisi warna tombol Tab (Sama persis dengan TSX)
-        tabLogin.className = `rounded-full px-5 py-2 text-sm font-semibold transition ${isLogin ? 'bg-navy text-white shadow-sm' : 'text-slate hover:text-navy'}`;
-        tabRegister.className = `rounded-full px-5 py-2 text-sm font-semibold transition ${!isLogin ? 'bg-navy text-white shadow-sm' : 'text-slate hover:text-navy'}`;
+        tabLogin.className = `rounded-full px-5 py-2 text-sm font-semibold transition ${isLogin ? 'bg-[#522b89] text-white shadow-sm' : 'text-slate hover:text-[#522b89]'}`;
+        tabRegister.className = `rounded-full px-5 py-2 text-sm font-semibold transition ${!isLogin ? 'bg-[#522b89] text-white shadow-sm' : 'text-slate hover:text-[#522b89]'}`;
         
-        // Ganti Teks
         document.getElementById('formTitle').innerText = isLogin ? "Selamat datang kembali" : "Buat akun KOKA";
         document.getElementById('formSubtitle').innerText = isLogin ? "Masuk untuk melanjutkan ke akun kamu." : "Daftar gratis dan mulai cari kos impianmu.";
         document.getElementById('btnSubmitAuth').innerText = isLogin ? "Masuk" : "Daftar Sekarang";
         
-        // Animasi Tampil/Sembunyi Field
+        authForm.action = isLogin ? "{{ route('auth.login') }}" : "{{ url('/register') }}";
+        
         document.getElementById('registerFieldNama').classList.toggle('hidden', isLogin);
         document.getElementById('registerFieldHp').classList.toggle('hidden', isLogin);
         document.getElementById('loginExtras').classList.toggle('hidden', !isLogin);
         document.getElementById('registerExtras').classList.toggle('hidden', isLogin);
         
-        // Wajib diisi (Required)
+        const inputNama = document.getElementById('inputNama');
+        const inputHp = document.getElementById('inputHp');
+
         if(isLogin) {
-            document.getElementById('inputNama').removeAttribute('required');
-            document.getElementById('inputHp').removeAttribute('required');
+            inputNama.removeAttribute('required');
+            inputNama.setAttribute('disabled', 'true');
+            inputHp.removeAttribute('required');
+            inputHp.setAttribute('disabled', 'true');
         } else {
-            document.getElementById('inputNama').setAttribute('required', 'true');
-            document.getElementById('inputHp').setAttribute('required', 'true');
+            inputNama.removeAttribute('disabled');
+            inputNama.setAttribute('required', 'true');
+            inputHp.removeAttribute('disabled');
+            inputHp.setAttribute('required', 'true');
         }
         
         document.getElementById('bottomText').innerText = isLogin ? "Belum punya akun? " : "Sudah punya akun? ";
@@ -222,7 +269,6 @@
         setMode(currentMode === 'login' ? 'register' : 'login');
     }
 
-    // 3. Fungsi Animasi Intip Kata Sandi
     function togglePassword() {
         const input = document.getElementById('inputPassword');
         const eyeClosed = document.getElementById('iconEyeClosed');
@@ -239,28 +285,18 @@
         }
     }
 
-    function handleAuth(event) {
-        event.preventDefault(); 
-        
+    document.getElementById('authForm').addEventListener('submit', function(event) {
         if (currentMode === 'register' && !document.getElementById('checkTerms').checked) {
+            event.preventDefault();
             showToast("Setujui syarat & ketentuan dulu ya");
-            return;
         }
-
-        const msg = currentMode === 'login' ? "Berhasil masuk. Selamat datang!" : "Akun berhasil dibuat!";
-        showToast(msg);
-        
-        // Ubah link redirect di bawah ini ke /dummy-login
-        setTimeout(() => {
-            window.location.href = '/dummy-login'; 
-        }, 1500);
-    }
+    });
 
     function showToast(message) {
         const toast = document.createElement('div');
-        toast.className = 'fixed top-5 left-1/2 -translate-x-1/2 z-[100] flex items-center gap-2 rounded-xl bg-navy px-5 py-3.5 text-sm font-semibold text-white shadow-2xl transition-all duration-300 transform -translate-y-10 opacity-0';
+        toast.className = 'fixed top-5 left-1/2 -translate-x-1/2 z-[100] flex items-center gap-2 rounded-xl bg-[#522b89] px-5 py-3.5 text-sm font-semibold text-white shadow-2xl transition-all duration-300 transform -translate-y-10 opacity-0';
         toast.innerHTML = `
-            <svg class="h-5 w-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg class="h-5 w-5 text-[#F39C12]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             ${message}
